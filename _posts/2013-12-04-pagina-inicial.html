@@ -1,0 +1,127 @@
+---
+title: Página Inicial (Landing Page)
+layout: post
+---
+
+<h2>Página Inicial - Landing Page</h2>
+<p>Para o caso de ferramentas e utilitários para o suporte às atividades de seus usuários, precisamos de uma <strong>página inicial</strong> objetiva.</p>
+
+<p>Sugerimos a inclusão de um pequeno texto contendo um <i>overview</i> das principais funcionalidades do sistema. Este recurso auxiliará usuários que não estão certos do sistema que procuram. Este texto também pode conter instruções para os primeiros passos do usuário no sistema, como a ação de <i>login</i> por exemplo</p>
+
+<p>Em caso de sistemas que requeiram autenticação, é importante que as funcionalidades do sistema não sejam expostas, mesmo que estejam bloqueadas para o acesso do usuário não autorizado. Isto porque, a experiência de acesso negado gera frustração aos usuários. Assim, se o usuário em questão não tem acesso, melhor omití-lo que proibí-lo.</p>
+
+<p>Podemos também incluir o formulário de login na página inicial.</p>
+
+<br>
+<h4>Exemplo:</h4>
+
+<div class="tr-example">
+  
+  <header class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+      <li><a href="javascript:void(0)">Link</a></li>
+      <li><a href="javascript:void(0)">Link</a></li>
+      <li><a href="javascript:void(0)">Link</a></li>
+    </ul>
+  </header>
+  <br>
+
+  <div class="row">    
+    <div class="col-md-7">   
+      <h1>Bem vindo ao sistema XYZ</h1> 
+      <p>Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam, ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel aliquet libero. Vestibulum eget felis nec purus commodo convallis. Aliquam erat volutpat.  </p>
+    </div>  
+
+    <div class="col-md-5">
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Mantenha-me conectado
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a class="btn btn-default" onclick="javascript:void(0)">Sign in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+
+    <!-- Barra de Navegação Topo -->
+    <header class="navbar navbar-inverse">
+      <ul class="nav navbar-nav">
+        <li><a href="javascript:void(0)">Link</a></li>
+        <li><a href="javascript:void(0)">Link</a></li>
+        <li><a href="javascript:void(0)">Link</a></li>
+      </ul>
+    </header>
+
+    <!-- Texto de Boas vindas -->
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Bem vindo ao sistema XYZ</h1> 
+        <p>Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam, ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel aliquet libero. Vestibulum eget felis nec purus commodo convallis. Aliquam erat volutpat.  </p>
+      </div>  
+
+      <!-- Formulário de Login -->
+      <div class="col-md-5">
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Mantenha-me conectado
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  {% endhighlight %}  
+</div>
+
+

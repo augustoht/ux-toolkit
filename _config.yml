@@ -1,0 +1,10 @@
+name: "Kit de Componentes"
+description: "Conjunto de recomendações e boas práticas para a utilização de componentes web"
+
+url: "localhost:4000"
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+pygments: true
