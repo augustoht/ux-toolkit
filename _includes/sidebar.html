@@ -1,7 +1,7 @@
-<div class="bs-sidebar hidden-print affix-bottom" role="complementary">
-  <ul class="nav bs-sidenav">
+<aside data-spy="affix" data-offset-top="240" role="complementary">
+  <ul class="nav">
     {% for post in site.posts limit: 5 %}
       <li><a href="#{{post.name}}">{{ post.title }}</a></li>
     {% endfor %}              
   </ul>
-</div>
+</aside>

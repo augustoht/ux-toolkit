@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  sticky();
+  //sticky();
+  
   $('a[href^="#"]').on('click', function(e) {
     var $target, target;
     e.preventDefault();
@@ -16,7 +17,7 @@ $(document).ready(function() {
 sticky = function() {
   var lastPosition, offset;
   lastPosition = $(document).scrollTop();
-  offset = 400;
+  offset = 240;
   return $(window).scroll(function(event) {
     if (lastPosition < $(document).scrollTop() && $(document).scrollTop() > offset) {
       $('#sticker').css('margin-top', '0');
