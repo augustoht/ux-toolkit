@@ -88,23 +88,23 @@ task :commit do
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing commits to remote"
-  status = system("git push origin source")
+  status = system("git push origin master")
   puts status ? "Success" : "Failed"
 end
 
 desc "Deploy _site/ to master branch"
 task :deploy do
   puts "\n## Deleting master branch"
-  status = system("git branch -D master")
+  status = system("git branch -D gh-pages")
   puts status ? "Success" : "Failed"
   puts "\n## Creating new master branch and switching to it"
-  status = system("git checkout -b master")
+  status = system("git checkout -b gh-pages")
   puts status ? "Success" : "Failed"
   puts "\n## Forcing the _site subdirectory to be project root"
   status = system("git filter-branch --subdirectory-filter _site/ -f")
   puts status ? "Success" : "Failed"
   puts "\n## Switching back to source branch"
-  status = system("git checkout source")
+  status = system("git checkout master")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing all branches to origin"
   status = system("git push --all origin")
