@@ -33,12 +33,11 @@ code {
   text-decoration: none; 
 }
 
-#content section {
-  padding-top: 60px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;  
+#content section, article {
+  padding-top: 40px;
+  padding-bottom: 10px;
 }
 
-#content section:last-child{
-  border-bottom: none;
+section#about {
+  min-height: 700px;
 }
