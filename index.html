@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kit de Componentes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conjunto de recomendações e boas práticas para a utilização de componentes web">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/overrides.css" rel="stylesheet">
+    <link href="css/pygments/default.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></sc\
+ript>
+    <![endif]-->
+  </head>
+
+  <body id="home">
+    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#home">UXTK</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#whats">O que é isso?</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#about">Sobre</a></li>
+      </ul>
+
+      <!-- <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Pesquisar</button>
+      </form> -->
+
+    </div><!-- /.navbar-collapse -->
+  </nav>
+</header>    
+
+    <main class="jumbotron" id="content" role="main">
+  <div class="container">
+    <h1>TRT3 UX Toolkit</h1>
+    <p class="lead">Manual de padrões e boas práticas para o desenvolvimento de componentes WEB </p>    
+  </div>
+</main>
+
+    <div class="container">
+      <div class="col-md-3">
+        <div class="bs-sidebar hidden-print affix-bottom" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      <li><a href="#/2013/12/04/pagina-inicial">Página Inicial (Landing Page)</a></li>
+                  
+  </ul>
+</div>        
+      </div>
+
+      <div id="content" class="col-md-9">
+        <section id="whats">
+          <h1>O que é isso?</h1>
+
+<p class="lead">Este guia é uma ferramenta de apoio ao desenvolvimento de sistemas do <a href="http://www.trt3.jus.br">Tribunal Regional do Trabalho da 3ª Região</a> </p>
+<p>Levando em consideração as boas práticas e requisitos de usabilidade, propomos a série de protótipos a seguir com a finalidade de padronizar os componentes mais comuns aos diversos sistemas deste Tribunal.</p>
+
+        </section>
+        
+
+        <section id="components">
+          
+
+<div id="/2013/12/04/pagina-inicial">
+  
+</div>
+
+
+<p>  <h2>Página Inicial - Landing Page</h2></p>
+
+<p>Para o caso de ferramentas e utilitários para o suporte às atividades de seus usuários, precisamos de uma <strong>página inicial</strong> objetiva.</p>
+
+
+
+
+<p>Sugerimos a inclusão de um pequeno texto contendo um <i>overview</i> das principais funcionalidades do sistema. Este recurso auxiliará usuários que não estão certos do sistema que procuram. Este texto também pode conter instruções para os primeiros passos do usuário no sistema, como a ação de <i>login</i> por exemplo</p>
+
+
+
+
+<p>Em caso de sistemas que requeiram autenticação, é importante que as funcionalidades do sistema não sejam expostas, mesmo que estejam bloqueadas para o acesso do usuário não autorizado. Isto porque, a experiência de acesso negado gera frustração aos usuários. Assim, se o usuário em questão não tem acesso, melhor omití-lo que proibí-lo.</p>
+
+
+
+
+<p>Podemos também incluir o formulário de login na página inicial.</p>
+
+
+<p><br></p>
+
+<h4>Exemplo:</h4>
+
+
+
+
+<div class="tr-example">
+  
+  <header class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+      <li><a href="javascript:void(0)">Link</a></li>
+      <li><a href="javascript:void(0)">Link</a></li>
+      <li><a href="javascript:void(0)">Link</a></li>
+    </ul>
+  </header>
+  <br>
+
+  <div class="row">    
+    <div class="col-md-7">   
+      <h1>Bem vindo ao sistema XYZ</h1> 
+      <p>Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam, ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel aliquet libero. Vestibulum eget felis nec purus commodo convallis. Aliquam erat volutpat.  </p>
+    </div>  
+
+    <div class="col-md-5">
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Mantenha-me conectado
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a class="btn btn-default" onclick="javascript:void(0)">Sign in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<p><br></p>
+
+<h4>Código do exemplo:</h4>
+
+
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="c">&lt;!-- Barra de Navegação Topo --&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-inverse&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0)&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+
+    <span class="c">&lt;!-- Texto de Boas vindas --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-7&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Bem vindo ao sistema XYZ<span class="nt">&lt;/h1&gt;</span> 
+        <span class="nt">&lt;p&gt;</span>Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam, ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel aliquet libero. Vestibulum eget felis nec purus commodo convallis. Aliquam erat volutpat.  <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>  
+
+      <span class="c">&lt;!-- Formulário de Login --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-5&quot;</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;inputEmail3&quot;</span> <span class="na">class=</span><span class="s">&quot;col-sm-2 control-label&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-10&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;inputEmail3&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;inputPassword3&quot;</span> <span class="na">class=</span><span class="s">&quot;col-sm-2 control-label&quot;</span><span class="nt">&gt;</span>Senha<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-10&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;inputPassword3&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Senha&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-offset-2 col-sm-10&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label&gt;</span>
+                  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Mantenha-me conectado
+                <span class="nt">&lt;/label&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-offset-2 col-sm-10&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  
+</code></pre></div>  
+</div>
+
+
+
+
+        </section>
+
+
+        <section id="about">
+          <h1>Sobre o manual</h1>
+
+<p class="lead"> Este manual foi criado pela equipe de desenvolvimento <em>front-end</em> e <em>webdesign</em> do Tribunal Regional do Trabalho da 3ª Região.</p>
+
+<p>Visando estimular a reutilização e a padronização de componentes para os sistemas internos do tribunal, a equipe de <em>front-end</em> decidiu criar uma série de recomendações para auxiliar as decisões das equipes de desenvolvimento. </p>
+
+<p>Estas recomendações incluem protótipos e códigos <em>html/css/js</em> baseados na versão 3 do <a href="http://getbootstrap.com/">Twitter Bootstrap</a> por entendermos que o <em>framework</em> atende aos requisitos de usabilidade pretendidos.</p>
+
+
+<hr>
+
+<span class="lead">Criado por:</span>
+<div class="list-group">
+  <div class="list-group-item">
+    <div class="pull-right" style="margin-top:6px">
+      <iframe src="http://ghbtns.com/github-btn.html?user=augustoht&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+    </div>
+
+    <a href="http://github.com/augustoht" class="team-member">
+      <img src="http://www.gravatar.com/avatar/a63a868f6bd4ad123609bb75ddba34f8.png" alt=""> &nbsp;&nbsp;
+      <strong>Augusto Teixeira</strong>
+      <small>@augustoht</small>
+    </a>
+  </div>
+  
+</div>
+
+        </section>
+      </div>
+    </div>
+
+    
+
+    <script src="js/jquery/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
