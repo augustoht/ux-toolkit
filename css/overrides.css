@@ -1,6 +1,4 @@
-body {
-  padding-top: 50px;
-}
+
 
 .navbar {
   margin-bottom: 0;
@@ -40,4 +38,8 @@ code {
 
 section#about {
   min-height: 700px;
+}
+
+.affix {
+  top: 60px;  
 }
