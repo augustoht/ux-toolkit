@@ -3,7 +3,7 @@ title: Componentes
 layout: default
 ---
 
-{% for post in site.posts limit: 5 %}
+{% for post in site.posts reversed %}
 <article id="{{post.name}}">
   {{ post.content }}
 </article>
