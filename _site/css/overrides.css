@@ -45,3 +45,8 @@ section#about {
 .affix {
   top: 60px;  
 }
+
+#sidebar li.active a {
+  color: #033C6D;
+}
+
