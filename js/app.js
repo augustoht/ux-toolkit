@@ -2,6 +2,7 @@ requirejs.config({
     baseUrl: 'js',    
 });
 
-require( ['scripts', 'bootstrap', 'select2/select2'], function( foo ) {
-
+require(['jquery'], function(){
+  require( ['bootstrap', 'scripts'], function( foo ) {});  
 });
+
