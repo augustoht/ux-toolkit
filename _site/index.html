@@ -10,7 +10,7 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/overrides.css" rel="stylesheet">
     <link href="css/pygments/default.css" rel="stylesheet">
-    
+    <script src="js/jquery/jquery.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -218,21 +218,68 @@ ript>
 <p>Definimos <strong>Campo de Pesquisa</strong> (<em>Search Box = input field + submit button</em>) como aquele componente utilizado para realizar buscas no contexto global da aplicação. Geralmente, este campo é utilizado para mecanismos de busca <em>full-text</em>.</p>
 <p>Em alguns casos, quando a aplicação trata de uma entidade de domínio principal específica, o Campo de Pesquisa poderá estar em um escopo mais restrito, mas, via de regra, campos de pesquisa possuem escopo global.</p>
 <p>Componentes de pesquisa com escopos específicos são componentes de filtragem. Exemplos de <em>search box</em> atuando como filtros geralmente são encontrados em tabelas e grids de dados.</p>
-<p class="lead">Campos de pesquisa devem estar <strong>claramente visíveis</strong>, <strong>reconhecíveis</strong> e <strong>fáceis de usar</strong></p>
-<p class="lead">Para alcançar estas três caracteríscas sugerimos a utilização de um botão com ícone de busca acoplado ao input field, a utilização de um placeholder com o texto "Busca", e utilização de recurso <em>live search</em>
+<p>Campos de pesquisa devem estar <strong>claramente visíveis</strong>, <strong>reconhecíveis</strong> e <strong>fáceis de usar</strong>. Para alcançar estas três caracteríscas sugerimos a utilização de um <strong>botão com ícone lupa acoplado ao input field</strong>, a utilização de um </trong>placeholder com o texto "Busca"</strong> e utilização de recurso <strong><em>live search</em></strong>.
+<h3>Pontos relevantes:</h3>
+<ul>
+  <li>A largura não deve ser muito grande para não atrair toda a atenção ao componente, e nem deve ser muito pequena pois assim induz o usuário a utilizar termos mais curtos e imprecisos.</li>
+  <li>O posicionamento deve ser fixo e se aproveitar dos padrões mais comumente utilizados.</li>
+  <li>Botões muito pequenos desestimulam a utilização da pesquisa pois obriga um posicionamento muito preciso do cursor.</li>
+  <li>Evitar colocá-lo próximo a outros formulários e inputs.</li>
+  <li>Preze pela simplicidade. Evite sobrecarregar visualmente o componente.</li>
+  <li>Em caso de label de texto, utilize-o consistentemente. Sugestão: "Pesquisar"</li>
+  <li>Utilizar design exclusivo, ou seja, nenhum outro componente com funcionalidade diferente deverá se parecer com um Campo de Pesquisa.</li>
+  <li>Utilize apenas 1 botão.</li>
+</ul>
+<br>
+<h3>Exemplo:</h3>
 
 <div class="tr-example">
+
+<script type="text/javascript">
+
   
-  <div class="row">  
-    <div class="col-lg-6">
-      <div class="input-group">
-        <input type="text" class="form-control">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go!</button>
-        </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
+
+  $("#search-box").select2({
+      placeholder: "Search for a movie",
+      minimumInputLength: 1,
+      ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+          url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+          dataType: 'jsonp',
+          data: function (term, page) {
+              return {
+                  q: term, // search term
+                  page_limit: 10,
+                  apikey: "gq4nrg3qumxzd59wqggekxp7" // please do not use so this example keeps working
+              };
+          },
+          results: function (data, page) { // parse the results into the format expected by Select2.
+              // since we are using custom formatting functions we do not need to alter remote JSON data
+              return {results: data.movies};
+          }
+      },
+      initSelection: function(element, callback) {
+          // the input tag has a value attribute preloaded that points to a preselected movie's id
+          // this function resolves that id attribute to an object that select2 can render
+          // using its formatResult renderer - that way the movie name is shown preselected
+          var id=$(element).val();
+          if (id!=="") {
+              $.ajax("http://api.rottentomatoes.com/api/public/v1.0/movies/"+id+".json", {
+                  data: {
+                      apikey: "gq4nrg3qumxzd59wqggekxp7"
+                  },
+                  dataType: "jsonp"
+              }).done(function(data) { callback(data); });
+          }
+      },
+      formatResult: movieFormatResult, // omitted for brevity, see the source of this page
+      formatSelection: movieFormatSelection,  // omitted for brevity, see the source of this page
+      dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
+      escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
+  });
+</script>
+<div class="row">
+  <input type="hidden" class="bigdrop select2-offscreen" id="search-box" style="width:600px" value="16340" tabindex="-1">
+</div>
 
 </div>
 </article>
@@ -277,9 +324,7 @@ ript>
     </div>
 
     
-
-    <script src="js/jquery/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/scripts.js"></script>
+    
+    <script data-main="js/app.js" src="js/requirejs/require.js"></script>
   </body>
 </html>
