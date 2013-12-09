@@ -3,6 +3,8 @@ requirejs.config({
 });
 
 require(['jquery/jquery'], function(){
-  require( ['bootstrap', 'scripts'], function( foo ) {});  
+  require( ['bootstrap'], function(){
+    require( ['scripts'], function (){});
+  });  
 });
 

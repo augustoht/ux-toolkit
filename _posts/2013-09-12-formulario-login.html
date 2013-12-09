@@ -1,0 +1,70 @@
+---
+title: Fomulário de Login
+layout: post
+name: login-form
+---
+
+<h1>Formulário de Login</h1>
+<p>Formulários de login são componentes muito comuns e a grande maioria dos usuários que possuem alguma experiência com sistemas web podem reconhecê-los e operá-los fácilmente. No entanto, definir um padrão para estes componentes pode reduzir o <em>gap</em> entre sistemas diferentes.</p>
+<p>Itens comuns em formulários de login são:</p>
+<ul>
+  <li>Labels;</li>
+  <li><em>Text fields</em>;</li>
+  <li>Botão com a ação do formulário;</li>
+  <li>Link para recuperação de senha;</li>
+  <li>Link para cadastro de conta;</li>
+  <li>Checkbox para a persistência da sessão.</li>
+</ul>
+<p>Contudo, os itens citados variam de acordo com a natureza do sistema. Em sistemas com cadastro de usuários restrito, não haverá link para cadastro de conta; sistemas com altos requisitos de segurança não devem fornecer persistência de sessão; etc.</p>
+<p>Segundo artigo publicado no site <a href="http://uxdesign.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">Ux Matters</a>, formulários devem trazer seus rótulos acima dos campos de entrada pois usuários fazem a leitura no sentido <em>top-down</em> e têm mais facilidade em associar o rótulo com o campo abaixo do que com o campo ao lado.</p>
+<p>É importante que os rótulos e o padrão visual dos campos e botões sejam consistentes entre os sistemas da organização. Devemos utilizar o rótulo "Entrar" para todos os botões de <strong><em>login</em></strong> dos sistemas. Também devemos destacar oo botão com a cor primária de cada sistema.</p>
+
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    <div class="col-md-6">
+      <form role="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Insira seu e-mail...">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira sua senha...">
+        </div>        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Mantenha-me conectado
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>  
+        <a href="#" onclick="javascript:void(0)">Esqueci minha senha</a> | 
+        <a href="#" onclick="javascript:void(0)">Quero me cadastrar</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+    <form role="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Insira seu e-mail...">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Senha</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira sua senha...">
+      </div>        
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Mantenha-me conectado
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>  
+      <a href="#" onclick="javascript:void(0)">Esqueci minha senha</a> | 
+      <a href="#" onclick="javascript:void(0)">Quero me cadastrar</a>
+    </form>
+  {% endhighlight %}
+</div>

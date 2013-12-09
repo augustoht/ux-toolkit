@@ -65,11 +65,15 @@ ript>
         <aside id="sidebar" data-spy="affix" data-offset-top="240" role="complementary">
   <ul class="nav">
     
+      <li><a href="#login-form">Fomulário de Login</a></li>
+    
       <li><a href="#landing">Página Inicial (Landing Page)</a></li>
     
       <li><a href="#search-box">Campo de Pesquisa</a></li>
     
-      <li><a href="#navbar-top">Navegação Global</a></li>
+      <li><a href="#navbar-top">Barra de Navegação Global</a></li>
+    
+      <li><a href="#suggestion-select">Campo de Seleção com Sugestão</a></li>
                   
   </ul>
 </aside>        
@@ -87,6 +91,73 @@ ript>
 
         <section id="components">
           
+<article id="login-form">
+  <h1>Formulário de Login</h1>
+<p>Formulários de login são componentes muito comuns e a grande maioria dos usuários que possuem alguma experiência com sistemas web podem reconhecê-los e operá-los fácilmente. No entanto, definir um padrão para estes componentes pode reduzir o <em>gap</em> entre sistemas diferentes.</p>
+<p>Itens comuns em formulários de login são:</p>
+<ul>
+  <li>Labels;</li>
+  <li><em>Text fields</em>;</li>
+  <li>Botão com a ação do formulário;</li>
+  <li>Link para recuperação de senha;</li>
+  <li>Link para cadastro de conta;</li>
+  <li>Checkbox para a persistência da sessão.</li>
+</ul>
+<p>Contudo, os itens citados variam de acordo com a natureza do sistema. Em sistemas com cadastro de usuários restrito, não haverá link para cadastro de conta; sistemas com altos requisitos de segurança não devem fornecer persistência de sessão; etc.</p>
+<p>Segundo artigo publicado no site <a href="http://uxdesign.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">Ux Matters</a>, formulários devem trazer seus rótulos acima dos campos de entrada pois usuários fazem a leitura no sentido <em>top-down</em> e têm mais facilidade em associar o rótulo com o campo abaixo do que com o campo ao lado.</p>
+<p>É importante que os rótulos e o padrão visual dos campos e botões sejam consistentes entre os sistemas da organização. Devemos utilizar o rótulo "Entrar" para todos os botões de <strong><em>login</em></strong> dos sistemas. Também devemos destacar oo botão com a cor primária de cada sistema.</p>
+
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    <div class="col-md-6">
+      <form role="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Insira seu e-mail...">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira sua senha...">
+        </div>        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Mantenha-me conectado
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>  
+        <a href="#" onclick="javascript:void(0)">Esqueci minha senha</a> | 
+        <a href="#" onclick="javascript:void(0)">Quero me cadastrar</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;exampleInputEmail1&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;exampleInputEmail1&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Insira seu e-mail...&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;exampleInputPassword1&quot;</span><span class="nt">&gt;</span>Senha<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;exampleInputPassword1&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Insira sua senha...&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>        
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Mantenha-me conectado
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Entrar<span class="nt">&lt;/button&gt;</span>  
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:void(0)&quot;</span><span class="nt">&gt;</span>Esqueci minha senha<span class="nt">&lt;/a&gt;</span> | 
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:void(0)&quot;</span><span class="nt">&gt;</span>Quero me cadastrar<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  
+</code></pre></div>
+</div>
+</article>
+
 <article id="landing">
   <h2>Página Inicial - Landing Page</h2>
 <p>Para o caso de ferramentas e utilitários para o suporte às atividades de seus usuários, precisamos de uma <strong>página inicial</strong> objetiva.</p>
@@ -218,6 +289,7 @@ ript>
 <p>Em alguns casos, quando a aplicação trata de uma entidade de domínio principal específica, o Campo de Pesquisa poderá estar em um escopo mais restrito, mas, via de regra, campos de pesquisa possuem escopo global.</p>
 <p>Componentes de pesquisa com escopos específicos são componentes de filtragem. Exemplos de <em>search box</em> atuando como filtros geralmente são encontrados em tabelas e grids de dados.</p>
 <p>Campos de pesquisa devem estar <strong>claramente visíveis</strong>, <strong>reconhecíveis</strong> e <strong>fáceis de usar</strong>. Para alcançar estas três caracteríscas sugerimos a utilização de um <strong>botão com ícone lupa acoplado ao input field</strong>, a utilização de um </trong>placeholder com o texto "Busca"</strong> e utilização de recurso <strong><em>live search</em></strong>.
+<p>Estudo realizado por Jacob Nielsen mostrou que o tamanho médio de campos de pesquisa existentes era de 18 caracteres e que, com este tamanho, 27% das consultas eram maiores que o tamanho máximo do campo. O estudo mostrou também que utilizando campos de pesquisa com o tamanho de 27 caracteres, 90% das consultas estarão adequadas ao tamanho do campo.</p>
 <h3>Pontos relevantes:</h3>
 <ul>
   <li>A largura não deve ser muito grande para não atrair toda a atenção ao componente, e nem deve ser muito pequena pois assim induz o usuário a utilizar termos mais curtos e imprecisos.</li>
@@ -305,12 +377,170 @@ ript>
 </article>
 
 <article id="navbar-top">
-  <h1>Navegação Global</h1>
+  <h1>Barra de Navegação Global</h1>
 <p>A navegação global tem mais relação com a taxonomia das informações a serem exibidas que com suas características técnicas. Uma boa navegação é constituída por itens equivalentes em cada nível. Por exemplo: Se temos um item "Mamífero" no primeiro nível, um segundo item deveria ser "Felino" e não "Gato" pois este último deveria estar no nível imediatamente inferior juntamente com os tigres e leões.</p>
 <p>Feita esta observação, em termos de componentes, devemos usar items genéricos no primeiro nível e como em webapps o conteúdo não é muito estenso, então ómitir os niveis inferiores é bem razoável (em portais de conteúdo, pode-se utilizar níveis inferiores com muitos itens e recursos visuais ou exibir níveis inferiores logo de início). </p>
-<p>Não há uma regra definida no que se refere à quantidade de níveis de menu devemos manter. Contudo, é notório que menus muito sobrecarregados são fontes de confusão para os usuários. Caso a hierarquia seja estensa, é melhor utilizar-se de outros componentes de navegação para complementar a barra de navegação global. Exemplo: <a href="#side-menu">Menu Lateral</a></p>
+<p>Não há uma regra definida no que se refere à quantidade de níveis de menu devemos manter. Contudo, é notório que menus muito sobrecarregados são fontes de confusão para os usuários. Caso a hierarquia seja estensa, é melhor utilizar-se de outros componentes de navegação para complementar a barra de navegação global como por exemplo o <a href="#side-menu">Menu Lateral</a>.</p>
+<p>Itens que podem estar presentes na barra de navegação global:</p>
+<ul>
+  <li>Logomarca (Brand);</li>
+  <li>Itens de menu globais podendo ter, ou não, sub-itens;</li>  
+  <li><a href="#search-box">Campo de pesquisa</a> (com função <em>full-text search</em>);</li>
+  <li>Notificações;</li>
+  <li>Menu de configuração de conta, com, ou sem <em>dropdown</em>;</li>
+  <li>Label de versão.</li>
+</ul>
 
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logomarca</a>
+      </div>
 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Item</a></li>          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Item <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">subitem</a></li>
+              <li><a href="#">subitem</a></li>
+              <li><a href="#">subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">subitem</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Pesquisa...">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="badge pull-right">4</span>
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configurações<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Subitem</a></li>
+              <li><a href="#">Subitem</a></li>
+              <li><a href="#">Subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Subitem</a></li>
+            </ul>
+          </li>
+          <li><span class="label label-default">v0.0.0rc1</span></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  </div>
+</div>
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Itens são agrupados quando visualizados em dispositivos móveis --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar-header&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> 
+          <span class="na">data-target=</span><span class="s">&quot;#collapse-menu&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle navigation<span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navbar-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Logomarca<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapse navbar-collapse&quot;</span> <span class="na">id=</span><span class="s">&quot;collapse-menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>          
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+              Item <span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-left&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisa...&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;badge pull-right&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/span&gt;</span>
+              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-user&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+              Configurações<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;label label-default&quot;</span><span class="nt">&gt;</span>v0.0.0rc1<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/nav&gt;</span>
+    
+</code></pre></div>
+</div>
+</article>
+
+<article id="suggestion-select">
+  <h1>Campo de Seleção com Sugestão</h1>
+<p>Conhecidos como <em>select</em>, <em>combobox</em>, <em>dropdowns</em>, os campos de seleção são muito úteis em formulários. Em muitos dos casos, exibem itens estáticos, finitos e razoavelmente localizáveis. Porém, há casos em que podemos ter muitos itens de modo a tornar inviável a localização do item apenas rolando a listagem. E ainda, outros casos em que o tamanho da listagem é desconhecido pois esta apresenta itens dinâmicos que podem aumentar muito com o tempo.</p>
+<p>Para estes últimos casos, foram criadas alternativas e campos de seleção para facilitar o seu uso. Daremos a este componente o nome de Select com Sugestão pois associa o componente select com um recurso que sugere e filtra a listagem à medida em que o usuário digita no campo.</p>
+<p>Visualmente, algumas características são desejáveis neste componente:</p>
+<ul>
+  <li>Visualização em contexto: o usuário deve filtrar sem sair da página ou ter seu foco desviado.;</li>
+  <li>Distinção visual clara: o usuário deve ser capaz de reconhecer que aquele campo de seleção tem recurso adicional;</li>
+  <li>Tempo de resposta razoávelmente pequeno;</li>
+  <li><em>Feedback</em> visual como o uso de "spinners" por exemplo;</li>
+  <li>Coerência na filtragem: os itens sugeridos devem estar de acordo com os caracteres digitados.</li>
+</ul>
+<p>É importante que todos os campos de todos os sistemas que tenham demandas semelhantes às descritas acima, apresente funcionalidade e modo de uso consistentes.</p>
+
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    
+    
+
+  </div>
+</div>
 </article>
  
         </section>

@@ -1,11 +1,146 @@
 ---
-title: Navegação Global
+title: Barra de Navegação Global
 layout: post
 name: navbar-top
 ---
 
-<h1>Navegação Global</h1>
+<h1>Barra de Navegação Global</h1>
 <p>A navegação global tem mais relação com a taxonomia das informações a serem exibidas que com suas características técnicas. Uma boa navegação é constituída por itens equivalentes em cada nível. Por exemplo: Se temos um item "Mamífero" no primeiro nível, um segundo item deveria ser "Felino" e não "Gato" pois este último deveria estar no nível imediatamente inferior juntamente com os tigres e leões.</p>
 <p>Feita esta observação, em termos de componentes, devemos usar items genéricos no primeiro nível e como em webapps o conteúdo não é muito estenso, então ómitir os niveis inferiores é bem razoável (em portais de conteúdo, pode-se utilizar níveis inferiores com muitos itens e recursos visuais ou exibir níveis inferiores logo de início). </p>
-<p>Não há uma regra definida no que se refere à quantidade de níveis de menu devemos manter. Contudo, é notório que menus muito sobrecarregados são fontes de confusão para os usuários. Caso a hierarquia seja estensa, é melhor utilizar-se de outros componentes de navegação para complementar a barra de navegação global. Exemplo: <a href="#side-menu">Menu Lateral</a></p>
+<p>Não há uma regra definida no que se refere à quantidade de níveis de menu devemos manter. Contudo, é notório que menus muito sobrecarregados são fontes de confusão para os usuários. Caso a hierarquia seja estensa, é melhor utilizar-se de outros componentes de navegação para complementar a barra de navegação global como por exemplo o <a href="#side-menu">Menu Lateral</a>.</p>
+<p>Itens que podem estar presentes na barra de navegação global:</p>
+<ul>
+  <li>Logomarca (Brand);</li>
+  <li>Itens de menu globais podendo ter, ou não, sub-itens;</li>  
+  <li><a href="#search-box">Campo de pesquisa</a> (com função <em>full-text search</em>);</li>
+  <li>Notificações;</li>
+  <li>Menu de configuração de conta, com, ou sem <em>dropdown</em>;</li>
+  <li>Label de versão.</li>
+</ul>
 
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logomarca</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Item</a></li>          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Item <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">subitem</a></li>
+              <li><a href="#">subitem</a></li>
+              <li><a href="#">subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">subitem</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Pesquisa...">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="badge pull-right">4</span>
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configurações<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Subitem</a></li>
+              <li><a href="#">Subitem</a></li>
+              <li><a href="#">Subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Subitem</a></li>
+            </ul>
+          </li>
+          <li><span class="label label-default">v0.0.0rc1</span></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  </div>
+</div>
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+  <nav class="navbar navbar-default" role="navigation">
+      <!-- Itens são agrupados quando visualizados em dispositivos móveis -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+          data-target="#collapse-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logomarca</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="collapse-menu">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Item</a></li>          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Item <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">subitem</a></li>
+              <li><a href="#">subitem</a></li>
+              <li><a href="#">subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">subitem</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Pesquisa...">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="badge pull-right">4</span>
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Configurações<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Subitem</a></li>
+              <li><a href="#">Subitem</a></li>
+              <li><a href="#">Subitem</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Subitem</a></li>
+            </ul>
+          </li>
+          <li><span class="label label-default">v0.0.0rc1</span></li>
+        </ul>
+      </div>
+    </nav>
+    {% endhighlight %}
+</div>
