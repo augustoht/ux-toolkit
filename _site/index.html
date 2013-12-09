@@ -10,6 +10,14 @@
     <link href="css/overrides.css" rel="stylesheet">
     <link href="css/pygments/default.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="js/select2/select2.css" rel="stylesheet">
+    <link href="js/select2-bootstrap-css/select2-bootstrap.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/select2/select2.js"></script>
+    <script type="text/javascript" src="js/select2/select2_locale_pt-BR.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -532,14 +540,168 @@ ript>
   <li>Coerência na filtragem: os itens sugeridos devem estar de acordo com os caracteres digitados.</li>
 </ul>
 <p>É importante que todos os campos de todos os sistemas que tenham demandas semelhantes às descritas acima, apresente funcionalidade e modo de uso consistentes.</p>
+<p>Existem diversas bibliotecas <em>open source</em> em javascript que podem ser adicionados ao <em>front-end</em> dos aplicativos. Para ilustrar um componente de Seleção com Sugestão, utilizamos o <a href="http://ivaynberg.github.io/select2/">Select2</a> com o estilo fornecido por <a href="https://github.com/t0m/select2-bootstrap-css">select2-bootstrap-css</a> acessando a API pública de <a href="http://www.rottentomatoes.com/">RottenTomatoes.com</a>.</p>
 
 <h4>Exemplo:</h4>
+<h4>Seleção simples:</h4>
 <div class="tr-example">
   <div class="row">
     
-    
+    <div class="col-md-6">
+      <input type="hidden" id="e1" style="width:600px;">  
+    </div>    
+
+    <script type="text/javascript">
+       $(document).ready(function() { 
+          $("#e1").select2({
+            placeholder: "Pesquise um filme...",
+            minimumInputLength: 3,
+            ajax: {
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: 'jsonp',
+                quietMillis: 100,
+                data: function (term, page) {
+                    return {
+                        q: term, 
+                        page_limit: 10, 
+                        page: page, 
+                        apikey: "gq4nrg3qumxzd59wqggekxp7" 
+                    };
+                },
+                results: function (data, page) {
+                    var more = (page * 10) < data.total;
+                    return {results: data.movies, more: more};
+                }
+            },
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop"
+        });
+
+       });
+    </script>
 
   </div>
+</div>
+
+<h4>Código do Exemplo:</h4>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-6&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">id=</span><span class="s">&quot;e1&quot;</span> <span class="na">style=</span><span class="s">&quot;width:600px;&quot;</span><span class="nt">&gt;</span>  
+    <span class="nt">&lt;/div&gt;</span>    
+
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+       <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+          <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#e1&quot;</span><span class="p">).</span><span class="nx">select2</span><span class="p">({</span>
+            <span class="nx">placeholder</span><span class="o">:</span> <span class="s2">&quot;Pesquise um filme...&quot;</span><span class="p">,</span>
+            <span class="nx">minimumInputLength</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nx">ajax</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://api.rottentomatoes.com/api/public/v1.0/movies.json&quot;</span><span class="p">,</span>
+                <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
+                <span class="nx">quietMillis</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">term</span><span class="p">,</span> <span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">{</span>
+                        <span class="nx">q</span><span class="o">:</span> <span class="nx">term</span><span class="p">,</span> 
+                        <span class="nx">page_limit</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> 
+                        <span class="nx">page</span><span class="o">:</span> <span class="nx">page</span><span class="p">,</span> 
+                        <span class="nx">apikey</span><span class="o">:</span> <span class="s2">&quot;gq4nrg3qumxzd59wqggekxp7&quot;</span> 
+                    <span class="p">};</span>
+                <span class="p">},</span>
+                <span class="nx">results</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">more</span> <span class="o">=</span> <span class="p">(</span><span class="nx">page</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">total</span><span class="p">;</span>
+                    <span class="k">return</span> <span class="p">{</span><span class="nx">results</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">movies</span><span class="p">,</span> <span class="nx">more</span><span class="o">:</span> <span class="nx">more</span><span class="p">};</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">formatResult</span><span class="o">:</span> <span class="nx">movieFormatResult</span><span class="p">,</span>
+            <span class="nx">formatSelection</span><span class="o">:</span> <span class="nx">movieFormatSelection</span><span class="p">,</span>
+            <span class="nx">dropdownCssClass</span><span class="o">:</span> <span class="s2">&quot;bigdrop&quot;</span>
+        <span class="p">});</span>
+
+       <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+  
+</code></pre></div>
+</div>
+
+<h4>Seleção Múltipla:</h4>
+<div class="tr-example">
+  <div class="row">
+    <div class="col-md-6">
+      <input type="hidden" id="e2" style="width:600px;">  
+    </div>    
+
+    <script type="text/javascript">
+       $(document).ready(function() { 
+          $("#e2").select2({
+            placeholder: "Pesquise um filme...",
+            minimumInputLength: 3,            
+            multiple: true,
+            ajax: {
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: 'jsonp',
+                quietMillis: 100,
+                data: function (term, page) {
+                    return {
+                        q: term, 
+                        page_limit: 10, 
+                        page: page, 
+                        apikey: "gq4nrg3qumxzd59wqggekxp7" 
+                    };
+                },
+                results: function (data, page) {
+                    var more = (page * 10) < data.total;
+                    return {results: data.movies, more: more};
+                }
+            },
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop"
+        });
+
+       });
+    </script>
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-6&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">id=</span><span class="s">&quot;e2&quot;</span> <span class="na">style=</span><span class="s">&quot;width:600px;&quot;</span><span class="nt">&gt;</span>  
+    <span class="nt">&lt;/div&gt;</span>    
+
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+       <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+          <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#e2&quot;</span><span class="p">).</span><span class="nx">select2</span><span class="p">({</span>
+            <span class="nx">placeholder</span><span class="o">:</span> <span class="s2">&quot;Pesquise um filme...&quot;</span><span class="p">,</span>
+            <span class="nx">minimumInputLength</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>            
+            <span class="nx">multiple</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">ajax</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://api.rottentomatoes.com/api/public/v1.0/movies.json&quot;</span><span class="p">,</span>
+                <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
+                <span class="nx">quietMillis</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">term</span><span class="p">,</span> <span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">{</span>
+                        <span class="nx">q</span><span class="o">:</span> <span class="nx">term</span><span class="p">,</span> 
+                        <span class="nx">page_limit</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> 
+                        <span class="nx">page</span><span class="o">:</span> <span class="nx">page</span><span class="p">,</span> 
+                        <span class="nx">apikey</span><span class="o">:</span> <span class="s2">&quot;gq4nrg3qumxzd59wqggekxp7&quot;</span> 
+                    <span class="p">};</span>
+                <span class="p">},</span>
+                <span class="nx">results</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">more</span> <span class="o">=</span> <span class="p">(</span><span class="nx">page</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">total</span><span class="p">;</span>
+                    <span class="k">return</span> <span class="p">{</span><span class="nx">results</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">movies</span><span class="p">,</span> <span class="nx">more</span><span class="o">:</span> <span class="nx">more</span><span class="p">};</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">formatResult</span><span class="o">:</span> <span class="nx">movieFormatResult</span><span class="p">,</span>
+            <span class="nx">formatSelection</span><span class="o">:</span> <span class="nx">movieFormatSelection</span><span class="p">,</span>
+            <span class="nx">dropdownCssClass</span><span class="o">:</span> <span class="s2">&quot;bigdrop&quot;</span>
+        <span class="p">});</span>
+
+       <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+  
+</code></pre></div>
 </div>
 </article>
  
@@ -580,6 +742,5 @@ ript>
 
     
     
-    <script data-main="js/app.js" src="js/requirejs/require.js"></script>
   </body>
 </html>

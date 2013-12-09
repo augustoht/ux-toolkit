@@ -16,12 +16,166 @@ name: suggestion-select
   <li>Coerência na filtragem: os itens sugeridos devem estar de acordo com os caracteres digitados.</li>
 </ul>
 <p>É importante que todos os campos de todos os sistemas que tenham demandas semelhantes às descritas acima, apresente funcionalidade e modo de uso consistentes.</p>
+<p>Existem diversas bibliotecas <em>open source</em> em javascript que podem ser adicionados ao <em>front-end</em> dos aplicativos. Para ilustrar um componente de Seleção com Sugestão, utilizamos o <a href="http://ivaynberg.github.io/select2/">Select2</a> com o estilo fornecido por <a href="https://github.com/t0m/select2-bootstrap-css">select2-bootstrap-css</a> acessando a API pública de <a href="http://www.rottentomatoes.com/">RottenTomatoes.com</a>.</p>
 
 <h4>Exemplo:</h4>
+<h4>Seleção simples:</h4>
 <div class="tr-example">
   <div class="row">
     
-    
+    <div class="col-md-6">
+      <input type="hidden" id="e1" style="width:600px;">  
+    </div>    
+
+    <script type="text/javascript">
+       $(document).ready(function() { 
+          $("#e1").select2({
+            placeholder: "Pesquise um filme...",
+            minimumInputLength: 3,
+            ajax: {
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: 'jsonp',
+                quietMillis: 100,
+                data: function (term, page) {
+                    return {
+                        q: term, 
+                        page_limit: 10, 
+                        page: page, 
+                        apikey: "gq4nrg3qumxzd59wqggekxp7" 
+                    };
+                },
+                results: function (data, page) {
+                    var more = (page * 10) < data.total;
+                    return {results: data.movies, more: more};
+                }
+            },
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop"
+        });
+
+       });
+    </script>
 
   </div>
+</div>
+
+<h4>Código do Exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+    <div class="col-md-6">
+      <input type="hidden" id="e1" style="width:600px;">  
+    </div>    
+
+    <script type="text/javascript">
+       $(document).ready(function() { 
+          $("#e1").select2({
+            placeholder: "Pesquise um filme...",
+            minimumInputLength: 3,
+            ajax: {
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: 'jsonp',
+                quietMillis: 100,
+                data: function (term, page) {
+                    return {
+                        q: term, 
+                        page_limit: 10, 
+                        page: page, 
+                        apikey: "gq4nrg3qumxzd59wqggekxp7" 
+                    };
+                },
+                results: function (data, page) {
+                    var more = (page * 10) < data.total;
+                    return {results: data.movies, more: more};
+                }
+            },
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop"
+        });
+
+       });
+    </script>
+  {% endhighlight %}
+</div>
+
+<h4>Seleção Múltipla:</h4>
+<div class="tr-example">
+  <div class="row">
+    <div class="col-md-6">
+      <input type="hidden" id="e2" style="width:600px;">  
+    </div>    
+
+    <script type="text/javascript">
+       $(document).ready(function() { 
+          $("#e2").select2({
+            placeholder: "Pesquise um filme...",
+            minimumInputLength: 3,            
+            multiple: true,
+            ajax: {
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: 'jsonp',
+                quietMillis: 100,
+                data: function (term, page) {
+                    return {
+                        q: term, 
+                        page_limit: 10, 
+                        page: page, 
+                        apikey: "gq4nrg3qumxzd59wqggekxp7" 
+                    };
+                },
+                results: function (data, page) {
+                    var more = (page * 10) < data.total;
+                    return {results: data.movies, more: more};
+                }
+            },
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop"
+        });
+
+       });
+    </script>
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+    <div class="col-md-6">
+      <input type="hidden" id="e2" style="width:600px;">  
+    </div>    
+
+    <script type="text/javascript">
+       $(document).ready(function() { 
+          $("#e2").select2({
+            placeholder: "Pesquise um filme...",
+            minimumInputLength: 3,            
+            multiple: true,
+            ajax: {
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: 'jsonp',
+                quietMillis: 100,
+                data: function (term, page) {
+                    return {
+                        q: term, 
+                        page_limit: 10, 
+                        page: page, 
+                        apikey: "gq4nrg3qumxzd59wqggekxp7" 
+                    };
+                },
+                results: function (data, page) {
+                    var more = (page * 10) < data.total;
+                    return {results: data.movies, more: more};
+                }
+            },
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop"
+        });
+
+       });
+    </script>
+
+  {% endhighlight %}
 </div>

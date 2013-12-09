@@ -13,7 +13,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.0.3",    
-    "requirejs": "~2.1.9"
+    "jquery": "~2.0.3",
+    "select2": "~3.4.5",
+    "select2-bootstrap-css": "~1.2.0"
   }
 }
