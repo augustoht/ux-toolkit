@@ -50,7 +50,7 @@ var pageableGrid = new Backgrid.Grid({
 });
 
 // Render the grid
-var $example2 = $("#example");
+var $example2 = $("#backgrid");
 $example2.append(pageableGrid.render().$el)
 
 // Initialize the paginator
