@@ -57,3 +57,10 @@ section#about {
   color: #033C6D;
 }
 
+.input-prepend:before {  
+  font-family: FontAwesome;
+  font-size: 1.5em;
+  color: rgb(111, 165, 223);
+  margin-right: 10px;
+  content: "\f002";
+}

@@ -31,4 +31,3 @@ function movieFormatResult(movie) {
 function movieFormatSelection(movie) {
     return movie.title;
 }
-
