@@ -81,6 +81,8 @@ ript>
     
       <li><a href="#navbar-top">Barra de Navegação Global</a></li>
     
+      <li><a href="#list-filters">Filtros em Listagens</a></li>
+    
       <li><a href="#suggestion-select">Campo de Seleção com Sugestão</a></li>
                   
   </ul>
@@ -527,10 +529,31 @@ ript>
 </div>
 </article>
 
+<article id="list-filters">
+  <h1>Filtros em Listagens</h1>
+
+<p>Filtros são componentes extremamente úteis em listagens de dados, principalmente quando lidamos com grandes volumes. Sua função é bastante intuitiva: filtrar os dados exibidos de acordo com os caracteres inseridos.</p>
+<p>As principais características para estes componentes são:</p>
+<ul>
+  <li>Distinção visual do componente (geralmente com associação a um ícone lupa);</li>
+  <li>Filtragem automática e em "tempo real". É desejável que a filtragem seja disparada pelo evento <em>onkeyup</em> para que o usuário tenha <em>feedback imediato.</em></li>
+  <li>Em alguns casos, quando o esforço de implentação seja pequeno, torna-se interessante atribuir um <em>highlight</em> nos termos da listagem que "casam" com o termo inserido.</li>
+  <li>Também é desejável que se permita a filtragem considerando qualquer campo de texto exibido no grid.</li>
+  <li>É importante que os filtros sejam visualmente distintos dos campos de pesquisa.</li>
+</ul>
+
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    Veja o funcionamento do filtro no componente <a href="#grid">Grid</a>
+  </div>
+</div>
+</article>
+
 <article id="suggestion-select">
   <h1>Campo de Seleção com Sugestão</h1>
-<p>Conhecidos como <em>select</em>, <em>combobox</em>, <em>dropdowns</em>, os campos de seleção são muito úteis em formulários. Em muitos dos casos, exibem itens estáticos, finitos e razoavelmente localizáveis. Porém, há casos em que podemos ter muitos itens de modo a tornar inviável a localização do item apenas rolando a listagem. E ainda, outros casos em que o tamanho da listagem é desconhecido pois esta apresenta itens dinâmicos que podem aumentar muito com o tempo.</p>
-<p>Para estes últimos casos, foram criadas alternativas e campos de seleção para facilitar o seu uso. Daremos a este componente o nome de Select com Sugestão pois associa o componente select com um recurso que sugere e filtra a listagem à medida em que o usuário digita no campo.</p>
+<p>Conhecidos como <em>select</em>, <em>combobox</em>, <em>dropdowns</em>, os campos de seleção são muito úteis em formulários. Em muitos dos casos, exibem itens estáticos, finitos e razoavelmente localizáveis. Porém, há casos em que podemos ter muitos itens de modo que se torna inviável a localização do item apenas rolando a listagem. E ainda, outros casos em que o tamanho da listagem é desconhecido pois esta apresenta itens dinâmicos que podem aumentar muito com o tempo.</p>
+<p>Para estes últimos casos, foram criadas alternativas para facilitar o seu uso. Conhecidos como <em>autocomplete field</em>, <em>typeahead</em>, <em>suggestion boxes</em>, daremos a este componente o nome de Select com Sugestão pois associa o componente select com um recurso que sugere e filtra a listagem à medida em que o usuário digita no campo.</p>
 <p>Visualmente, algumas características são desejáveis neste componente:</p>
 <ul>
   <li>Visualização em contexto: o usuário deve filtrar sem sair da página ou ter seu foco desviado.;</li>
