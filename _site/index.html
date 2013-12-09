@@ -756,10 +756,104 @@ ript>
 <article id="grid">
   <h1>Grid</h1>
 
-<div id="example">  
+<div class="tr-example">
+  <div class="ro">
+    <div id="backgrid">  
+    </div>    
+    <script src="js/backgrid-example.js"></script>
+  </div>
 </div>
 
-<script src="js/backgrid-example.js"></script>
+<h4>Código do exemplo</h4>
+<p>O código do grid em si é gerado pela biblioteca <strong>Backgrid</strong>. Listamos abaixo o código da integração do Backgrid.</p>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;backgrid&quot;</span><span class="nt">&gt;</span>  
+    <span class="nt">&lt;/div&gt;</span>  
+
+    <span class="nt">&lt;script&gt;</span>
+      <span class="kd">var</span> <span class="nx">Territory</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
+
+      <span class="kd">var</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="c1">// The key of the model attribute</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="c1">// The name to display in the header</span>
+        <span class="nx">editable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// By default every cell in a column is editable, but *ID* shouldn&#39;t be</span>
+        <span class="c1">// Defines a cell type, and ID is displayed as an integer without the &#39;,&#39; separating 1000s.</span>
+        <span class="nx">cell</span><span class="o">:</span> <span class="nx">Backgrid</span><span class="p">.</span><span class="nx">IntegerCell</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+          <span class="nx">orderSeparator</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+        <span class="p">})</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+        <span class="c1">// The cell type can be a reference of a Backgrid.Cell subclass, any Backgrid.Cell subclass instances like *id* above, or a string</span>
+        <span class="nx">cell</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// This is converted to &quot;StringCell&quot; and a corresponding class in the Backgrid package namespace is looked up</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pop&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span>
+        <span class="nx">cell</span><span class="o">:</span> <span class="s2">&quot;integer&quot;</span> <span class="c1">// An integer cell is a number cell that displays humanized integers</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;percentage&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;% of World Population&quot;</span><span class="p">,</span>
+        <span class="nx">cell</span><span class="o">:</span> <span class="s2">&quot;number&quot;</span> <span class="c1">// A cell type for floating point value, defaults to have a precision 2 decimal numbers</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+        <span class="nx">cell</span><span class="o">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;URL&quot;</span><span class="p">,</span>
+        <span class="nx">cell</span><span class="o">:</span> <span class="s2">&quot;uri&quot;</span> <span class="c1">// Renders the value in an HTML anchor element</span>
+      <span class="p">}];</span>
+
+      <span class="kd">var</span> <span class="nx">Territory</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
+      <span class="kd">var</span> <span class="nx">PageableTerritories</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">PageableCollection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">model</span><span class="o">:</span> <span class="nx">Territory</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;js/examples/pageable-territories.json&quot;</span><span class="p">,</span>
+        <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">pageSize</span><span class="o">:</span> <span class="mi">15</span>
+        <span class="p">},</span>
+        <span class="nx">mode</span><span class="o">:</span> <span class="s2">&quot;client&quot;</span> <span class="c1">// page entirely on the client side</span>
+      <span class="p">});</span>
+
+      <span class="kd">var</span> <span class="nx">pageableTerritories</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PageableTerritories</span><span class="p">();</span>
+
+      <span class="c1">// Set up a grid to use the pageable collection</span>
+      <span class="kd">var</span> <span class="nx">pageableGrid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backgrid</span><span class="p">.</span><span class="nx">Grid</span><span class="p">({</span>
+        <span class="nx">columns</span><span class="o">:</span> <span class="nx">columns</span><span class="p">,</span>
+        <span class="nx">collection</span><span class="o">:</span> <span class="nx">pageableTerritories</span>
+      <span class="p">});</span>
+
+      <span class="c1">// Render the grid</span>
+      <span class="kd">var</span> <span class="nx">$example2</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#backgrid&quot;</span><span class="p">);</span>
+      <span class="nx">$example2</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">pageableGrid</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">$el</span><span class="p">)</span>
+
+      <span class="c1">// Initialize the paginator</span>
+      <span class="kd">var</span> <span class="nx">paginator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backgrid</span><span class="p">.</span><span class="nx">Extension</span><span class="p">.</span><span class="nx">Paginator</span><span class="p">({</span>
+        <span class="nx">collection</span><span class="o">:</span> <span class="nx">pageableTerritories</span>
+      <span class="p">});</span>
+
+      <span class="c1">// Render the paginator</span>
+      <span class="nx">$example2</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">$el</span><span class="p">);</span>
+
+      <span class="c1">// Initialize a client-side filter to filter on the client</span>
+      <span class="c1">// mode pageable collection&#39;s cache.</span>
+      <span class="kd">var</span> <span class="nx">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backgrid</span><span class="p">.</span><span class="nx">Extension</span><span class="p">.</span><span class="nx">ClientSideFilter</span><span class="p">({</span>
+        <span class="nx">collection</span><span class="o">:</span> <span class="nx">pageableTerritories</span><span class="p">.</span><span class="nx">fullCollection</span><span class="p">,</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+      <span class="p">});</span>
+
+      <span class="c1">// Render the filter</span>
+      <span class="nx">$example2</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="nx">filter</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">$el</span><span class="p">);</span>
+
+      <span class="c1">// Add some space to the filter and move it to the right</span>
+      <span class="nx">filter</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="kr">float</span><span class="o">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="nx">margin</span><span class="o">:</span> <span class="s2">&quot;20px&quot;</span><span class="p">});</span>
+
+      <span class="c1">// Fetch some data</span>
+      <span class="nx">pageableTerritories</span><span class="p">.</span><span class="nx">fetch</span><span class="p">({</span><span class="nx">reset</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+  
+</code></pre></div>
+</div>
 </article>
  
         </section>
