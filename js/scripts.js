@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  //sticky();
-  
   $('a[href^="#"]').on('click', function(e) {
     var $target, target;
     e.preventDefault();
@@ -14,16 +12,23 @@ $(document).ready(function() {
   });
 });
 
-sticky = function() {
-  var lastPosition, offset;
-  lastPosition = $(document).scrollTop();
-  offset = 240;
-  return $(window).scroll(function(event) {
-    if (lastPosition < $(document).scrollTop() && $(document).scrollTop() > offset) {
-      $('#sticker').css('margin-top', '0');
-    } else if (lastPosition > $(document).scrollTop() && $(document).scrollTop() < offset) {
-      $('#sticker').css('margin-top', '-100px');
+function movieFormatResult(movie) {
+    var markup = "<table class='movie-result'><tr>";
+    if (movie.posters !== undefined && movie.posters.thumbnail !== undefined) {
+        markup += "<td class='movie-image'><img src='" + movie.posters.thumbnail + "'/></td>";
     }
-    return lastPosition = $(document).scrollTop();
-  });
-};
+    markup += "<td class='movie-info'><div class='movie-title'>" + movie.title + "</div>";
+    if (movie.critics_consensus !== undefined) {
+        markup += "<div class='movie-synopsis'>" + movie.critics_consensus + "</div>";
+    }
+    else if (movie.synopsis !== undefined) {
+        markup += "<div class='movie-synopsis'>" + movie.synopsis + "</div>";
+    }
+    markup += "</td></tr></table>"
+    return markup;
+}
+
+function movieFormatSelection(movie) {
+    return movie.title;
+}
+
