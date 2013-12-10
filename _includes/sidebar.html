@@ -1,5 +1,13 @@
 <aside id="sidebar" data-spy="affix" data-offset-top="240" role="complementary">
-  <ul class="nav">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <ul class="nav collapse navbar-collapse" id="sidebar-menu">
     {% for post in site.posts reversed %}
       <li><a href="#{{post.name}}">{{ post.title }}</a></li>
     {% endfor %}              
