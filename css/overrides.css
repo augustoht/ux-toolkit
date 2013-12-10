@@ -53,6 +53,14 @@ section#about {
   top: 60px;  
 }
 
+#sidebar li {
+  line-height: 15px;
+}
+
+#sidebar li a {
+  font-size: .8em;
+}
+
 #sidebar li.active a {
   color: #033C6D;
 }

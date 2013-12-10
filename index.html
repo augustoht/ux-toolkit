@@ -94,7 +94,15 @@ ript>
     <div class="container">
       <div class="col-md-3">
         <aside id="sidebar" data-spy="affix" data-offset-top="240" role="complementary">
-  <ul class="nav">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <ul class="nav collapse navbar-collapse" id="sidebar-menu">
     
       <li><a href="#landing">Página Inicial (Landing Page)</a></li>
     
@@ -108,7 +116,7 @@ ript>
     
       <li><a href="#suggestion-select">Campo de Seleção com Sugestão</a></li>
     
-      <li><a href="#grid">Grid</a></li>
+      <li><a href="#grid">Grid de Dados</a></li>
     
       <li><a href="#account-manager">Gerenciamento de Conta</a></li>
                   
@@ -777,7 +785,7 @@ ript>
 <div class="tr-example">
   <div class="row">
     <div id="backgrid">  
-      <button class="btn btn-success" style="margin-top: 20px">Novo Território</button>
+      <button class="btn btn-default" style="margin-top: 20px">Novo Território</button>
     </div>    
     <script src="js/backgrid-example.js"></script>
   </div>
@@ -787,7 +795,7 @@ ript>
 <p>O código do grid em si é gerado pela biblioteca <strong>Backgrid</strong>. Listamos abaixo o código da integração do Backgrid.</p>
 <div class="highlight">
   <div class="highlight"><pre><code class="html">    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;backgrid&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span> <span class="na">style=</span><span class="s">&quot;margin-top: 20px&quot;</span><span class="nt">&gt;</span>Novo Território<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">style=</span><span class="s">&quot;margin-top: 20px&quot;</span><span class="nt">&gt;</span>Novo Território<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/div&gt;</span>  
 
     <span class="nt">&lt;script&gt;</span>
