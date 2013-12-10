@@ -17,6 +17,6 @@
     "select2": "~3.4.5",
     "select2-bootstrap-css": "~1.2.0",
     "underscore": "~1.5.2",
-    "backbone": "~1.1.0"
+    "backbone": "~1.1.0"    
   }
 }

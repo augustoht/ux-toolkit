@@ -1,0 +1,100 @@
+<h1>Campo de Data</h1>
+<p>São elementos muito comuns em formulários. Sua função é fornecer suporte ao usuário para a inserção de datas e reduzir o grau de propensão a erros.</p>
+<p>As características desejáveis são:</p>
+<ul>
+  <li>Distinção visual no input que indique a presença de recurso acessório;</li>
+  <li>Boa navegabilidade entre meses e anos;</li>
+  <li>Distinção visual bem destacada para o dia selecionado;</li>
+  <li>Atalho para o "dia de hoje";</li>
+  <li>Flexibilidade técnica para formatos diversos;</li>
+</ul>
+
+<p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    
+    <div class="col-md-4">
+
+      <label for="datepicker">Data:</label>
+      <div class="input-group date">
+        <input type="text" class="form-control" id="datepicker">
+        <span class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+      </div>
+
+      <script type="text/javascript">        
+        $(function() {
+          $.datepicker.regional['pt-BR'] = {
+                closeText: 'Fechar',
+                prevText: '&#x3c;Anterior',
+                nextText: 'Pr&oacute;ximo&#x3e;',
+                currentText: 'Hoje',
+                monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho',
+                'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
+                'Jul','Ago','Set','Out','Nov','Dez'],
+                dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado'],
+                dayNamesShort: ['Do','Seg','Ter','Qua','Qui','Sex','Sab'],
+                dayNamesMin: ['Do','Seg','Ter','Qua','Qui','Sex','Sab'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''};
+          $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+          $( "#datepicker" ).datepicker({ 
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;datepicker&quot;</span><span class="nt">&gt;</span>Data:<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group date&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;datepicker&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-calendar&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>        
+        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">regional</span><span class="p">[</span><span class="s1">&#39;pt-BR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="nx">closeText</span><span class="o">:</span> <span class="s1">&#39;Fechar&#39;</span><span class="p">,</span>
+                <span class="nx">prevText</span><span class="o">:</span> <span class="s1">&#39;&amp;#x3c;Anterior&#39;</span><span class="p">,</span>
+                <span class="nx">nextText</span><span class="o">:</span> <span class="s1">&#39;Pr&amp;oacute;ximo&amp;#x3e;&#39;</span><span class="p">,</span>
+                <span class="nx">currentText</span><span class="o">:</span> <span class="s1">&#39;Hoje&#39;</span><span class="p">,</span>
+                <span class="nx">monthNames</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Janeiro&#39;</span><span class="p">,</span><span class="s1">&#39;Fevereiro&#39;</span><span class="p">,</span><span class="s1">&#39;Mar&amp;ccedil;o&#39;</span><span class="p">,</span><span class="s1">&#39;Abril&#39;</span><span class="p">,</span><span class="s1">&#39;Maio&#39;</span><span class="p">,</span><span class="s1">&#39;Junho&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Julho&#39;</span><span class="p">,</span><span class="s1">&#39;Agosto&#39;</span><span class="p">,</span><span class="s1">&#39;Setembro&#39;</span><span class="p">,</span><span class="s1">&#39;Outubro&#39;</span><span class="p">,</span><span class="s1">&#39;Novembro&#39;</span><span class="p">,</span><span class="s1">&#39;Dezembro&#39;</span><span class="p">],</span>
+                <span class="nx">monthNamesShort</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="s1">&#39;Fev&#39;</span><span class="p">,</span><span class="s1">&#39;Mar&#39;</span><span class="p">,</span><span class="s1">&#39;Abr&#39;</span><span class="p">,</span><span class="s1">&#39;Mai&#39;</span><span class="p">,</span><span class="s1">&#39;Jun&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="s1">&#39;Ago&#39;</span><span class="p">,</span><span class="s1">&#39;Set&#39;</span><span class="p">,</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span><span class="s1">&#39;Nov&#39;</span><span class="p">,</span><span class="s1">&#39;Dez&#39;</span><span class="p">],</span>
+                <span class="nx">dayNames</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Domingo&#39;</span><span class="p">,</span><span class="s1">&#39;Segunda-feira&#39;</span><span class="p">,</span><span class="s1">&#39;Ter&amp;ccedil;a-feira&#39;</span><span class="p">,</span><span class="s1">&#39;Quarta-feira&#39;</span><span class="p">,</span><span class="s1">&#39;Quinta-feira&#39;</span><span class="p">,</span><span class="s1">&#39;Sexta-feira&#39;</span><span class="p">,</span><span class="s1">&#39;Sabado&#39;</span><span class="p">],</span>
+                <span class="nx">dayNamesShort</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Do&#39;</span><span class="p">,</span><span class="s1">&#39;Seg&#39;</span><span class="p">,</span><span class="s1">&#39;Ter&#39;</span><span class="p">,</span><span class="s1">&#39;Qua&#39;</span><span class="p">,</span><span class="s1">&#39;Qui&#39;</span><span class="p">,</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span><span class="s1">&#39;Sab&#39;</span><span class="p">],</span>
+                <span class="nx">dayNamesMin</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Do&#39;</span><span class="p">,</span><span class="s1">&#39;Seg&#39;</span><span class="p">,</span><span class="s1">&#39;Ter&#39;</span><span class="p">,</span><span class="s1">&#39;Qua&#39;</span><span class="p">,</span><span class="s1">&#39;Qui&#39;</span><span class="p">,</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span><span class="s1">&#39;Sab&#39;</span><span class="p">],</span>
+                <span class="nx">weekHeader</span><span class="o">:</span> <span class="s1">&#39;Sm&#39;</span><span class="p">,</span>
+                <span class="nx">dateFormat</span><span class="o">:</span> <span class="s1">&#39;dd/mm/yy&#39;</span><span class="p">,</span>
+                <span class="nx">firstDay</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nx">isRTL</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">showMonthAfterYear</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">yearSuffix</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">};</span>
+          <span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">setDefaults</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">regional</span><span class="p">[</span><span class="s1">&#39;pt-BR&#39;</span><span class="p">]);</span>
+          <span class="nx">$</span><span class="p">(</span> <span class="s2">&quot;#datepicker&quot;</span> <span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span> 
+            <span class="nx">showButtonPanel</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">changeMonth</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">changeYear</span><span class="o">:</span> <span class="kc">true</span>
+          <span class="p">});</span>
+        <span class="p">});</span>
+      <span class="nt">&lt;/script&gt;</span>
+
+  
+</code></pre></div>
+</div>

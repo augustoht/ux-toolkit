@@ -1,0 +1,106 @@
+---
+title: Campo de Data
+layout: post
+name: datefield
+---
+
+<h1>Campo de Data</h1>
+<p>São elementos muito comuns em formulários. Sua função é fornecer suporte ao usuário para a inserção de datas e reduzir o grau de propensão a erros.</p>
+<p>As características desejáveis são:</p>
+<ul>
+  <li>Distinção visual no input que indique a presença de recurso acessório;</li>
+  <li>Boa navegabilidade entre meses e anos;</li>
+  <li>Distinção visual bem destacada para o dia selecionado;</li>
+  <li>Atalho para o "dia de hoje";</li>
+  <li>Flexibilidade técnica para formatos diversos;</li>
+</ul>
+
+<p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
+<h4>Exemplo:</h4>
+<div class="tr-example">
+  <div class="row">
+    
+    <div class="col-md-4">
+
+      <label for="datepicker">Data:</label>
+      <div class="input-group date">
+        <input type="text" class="form-control" id="datepicker">
+        <span class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+      </div>
+
+      <script type="text/javascript">        
+        $(function() {
+          $.datepicker.regional['pt-BR'] = {
+                closeText: 'Fechar',
+                prevText: '&#x3c;Anterior',
+                nextText: 'Pr&oacute;ximo&#x3e;',
+                currentText: 'Hoje',
+                monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho',
+                'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
+                'Jul','Ago','Set','Out','Nov','Dez'],
+                dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado'],
+                dayNamesShort: ['Do','Seg','Ter','Qua','Qui','Sex','Sab'],
+                dayNamesMin: ['Do','Seg','Ter','Qua','Qui','Sex','Sab'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''};
+          $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+          $( "#datepicker" ).datepicker({ 
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+    <label for="datepicker">Data:</label>
+      <div class="input-group date">
+        <input type="text" class="form-control" id="datepicker">
+        <span class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+      </div>
+
+      <script type="text/javascript">        
+        $(function() {
+          $.datepicker.regional['pt-BR'] = {
+                closeText: 'Fechar',
+                prevText: '&#x3c;Anterior',
+                nextText: 'Pr&oacute;ximo&#x3e;',
+                currentText: 'Hoje',
+                monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho',
+                'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
+                'Jul','Ago','Set','Out','Nov','Dez'],
+                dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado'],
+                dayNamesShort: ['Do','Seg','Ter','Qua','Qui','Sex','Sab'],
+                dayNamesMin: ['Do','Seg','Ter','Qua','Qui','Sex','Sab'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''};
+          $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+          $( "#datepicker" ).datepicker({ 
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true
+          });
+        });
+      </script>
+
+  {% endhighlight %}
+</div>
