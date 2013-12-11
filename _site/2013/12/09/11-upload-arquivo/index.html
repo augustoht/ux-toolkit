@@ -1,22 +1,15 @@
 <h4>Upload de Arquivo</h4>
-<p>São elementos de formulário que permitem a seleção de arquivos locais para envio ao servidor. Estes campos são renderezidos pelo navegador, portanto, a melhor opção é deixar que o padrão do navegador seja exibido ao usuário final pois, certamente, já estará habituado em decorrência do uso de outros sistemas.</p>
+<p>São elementos de formulário que permitem a seleção de arquivos locais para envio ao servidor. Os navegadores possuem campos de upload nativos e os renderizam sempre que encontrarm um elemento "input" do tipo "file". Em termos de usabilidade, a principal vantagem de se utilizar o elemento nativo é se aproveitar da experiência já adquirida pelo usuário em outros sistemas na web. Contudo, o campo de upload nativo não oferece muitas funcionalidades como barra de progresso, upload em mais de uma etapa, remoçao do arquivo adicionado, entre outras.</p>
+<p>Desta forma, sempre que houver necessidade de alguma funcionalidade adicional, será necessário estender o comportamento nativo ou integrar alguma biblioteca existente como a <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">jQuery File Upload</a> por exemplo.</p>
 
-<div class="tr-example">
-  <div class="row">
-    <div class="col-md-5">
-      <form role="form">      
-        <div class="form-group">          
-          <label for="exampleInputFile">Upload de Arquivo</label>
-          <div class="input-group">
-            <input type="file" id="exampleInputFile" class="form-control">
-            
-          </div>
-          
-          <p class="help-block">Por favor, selecione um arquivo.</p>
-        </div>
-      </form>  
-    </div>
-    
-    
-  </div>
-</div>
+<p> A principal característica desejável em um campo de upload de arquivo é sua distinção visual e intuitividade. Para isso, é interessante que utilizemos um padrão para o rótulo e também a utilização de um ícone sugestivo também padronizado para os botões: </p>
+<p>
+  <button class="btn btn-default">
+    <i class="fa fa-upload"></i>
+    Selecionar Arquivo...
+  </button> 
+</p>
+<p>O uso de barra de progresso também melhora a usabilidade no quesito <em>feedback</em>, pois informa o usuário sobre a situação do upload em questão.</p>
+<p>O upload em duas etapas aumenta reduz a propensão a erros reduzindo uploads indesejados. Também permite a exclusão de determinado antes de enviá-lo ao servidor reduzindo desperdícios onde o gargalo é maior.</p>
+<p>Como um campo de upload completo demanda a utilização de alguma tecnologia no servidor (ausente neste manual), esta seção não contará com um exemplo, porém, este pode ser encontrado na página da biblioteca citada nos parágrafos anteriores.</p>
+
