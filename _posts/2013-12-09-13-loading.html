@@ -1,0 +1,62 @@
+---
+title: Componente "Loading"
+layout: post
+name: loading-element
+---
+
+<h1>Componente "Loading"</h1>
+<p>Em processamentos longos, onde o carregamento de uma página ou recurso leva um tempo acima da média, é necessário fornecer algum recurso que dê <em>feedback</em> ao usuário indicando que a tarefa está sendo processada.</p>
+<p>Como características desejáveis sugerimos:</p>
+<ul>
+   <li>que utilizemos o mesmo rótulo em todos os elementos deste tipo e em todos os sistemas;</li>
+   <li>utilizar algum componente animado, pois assim fica ainda mais claro que alguma atividade está sendo realizada;</li>
+   <li>bloquar a tela em segundo plano para impedir a interação do usuário enquanto o processamento é realizado;</li>
+   <li>utilizar janela modal em tamanho fixo e não permitir redimensionamento.</li>
+ </ul>  
+<p>O exemplo abaixo não representa o mesmo funcionamento do componente em um sistema real. Sua finalidade é apenas demonstrar o padrão visual recomendado.</p>
+
+<h4>Exemplo:</h4>
+<div class="tr-example">
+ <div class="row">
+   
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">Exibir exemplo</button>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" style="width:300px; margin-top: 200px;">
+        <div class="modal-content">                        
+          <div class="modal-header">
+            <h2>Aguarde...</h2>
+          </div>
+          <div class="modal-body">
+            <div class="progress progress-striped active">
+              <div class="progress-bar"  role="progressbar" style="width: 100%"></div>
+            </div>
+          </div>            
+        </div>
+      </div>
+    </div>
+    
+ </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  {% highlight HTML %}
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">Exibir exemplo</button>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" style="width:300px; margin-top: 200px;">
+        <div class="modal-content">                        
+          <div class="modal-header">
+            <h2>Aguarde...</h2>
+          </div>
+          <div class="modal-body">
+            <div class="progress progress-striped active">
+              <div class="progress-bar"  role="progressbar" style="width: 100%"></div>
+            </div>
+          </div>            
+        </div>
+      </div>
+    </div>
+  {% endhighlight %}
+</div>

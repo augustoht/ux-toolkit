@@ -1,0 +1,56 @@
+<h1>Componente "Loading"</h1>
+<p>Em processamentos longos, onde o carregamento de uma página ou recurso leva um tempo acima da média, é necessário fornecer algum recurso que dê <em>feedback</em> ao usuário indicando que a tarefa está sendo processada.</p>
+<p>Como características desejáveis sugerimos:</p>
+<ul>
+   <li>que utilizemos o mesmo rótulo em todos os elementos deste tipo e em todos os sistemas;</li>
+   <li>utilizar algum componente animado, pois assim fica ainda mais claro que alguma atividade está sendo realizada;</li>
+   <li>bloquar a tela em segundo plano para impedir a interação do usuário enquanto o processamento é realizado;</li>
+   <li>utilizar janela modal em tamanho fixo e não permitir redimensionamento.</li>
+ </ul>  
+<p>O exemplo abaixo não representa o mesmo funcionamento do componente em um sistema real. Sua finalidade é apenas demonstrar o padrão visual recomendado.</p>
+
+<h4>Exemplo:</h4>
+<div class="tr-example">
+ <div class="row">
+   
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">Exibir exemplo</button>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" style="width:300px; margin-top: 200px;">
+        <div class="modal-content">                        
+          <div class="modal-header">
+            <h2>Aguarde...</h2>
+          </div>
+          <div class="modal-body">
+            <div class="progress progress-striped active">
+              <div class="progress-bar"  role="progressbar" style="width: 100%"></div>
+            </div>
+          </div>            
+        </div>
+      </div>
+    </div>
+    
+ </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;modal&quot;</span> <span class="na">data-target=</span><span class="s">&quot;#myModal&quot;</span><span class="nt">&gt;</span>Exibir exemplo<span class="nt">&lt;/button&gt;</span>
+    
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal fade&quot;</span> <span class="na">id=</span><span class="s">&quot;myModal&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-dialog&quot;</span> <span class="na">style=</span><span class="s">&quot;width:300px; margin-top: 200px;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-content&quot;</span><span class="nt">&gt;</span>                        
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-header&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>Aguarde...<span class="nt">&lt;/h2&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-body&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress progress-striped active&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar&quot;</span>  <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 100%&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>            
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  
+</code></pre></div>
+</div>
