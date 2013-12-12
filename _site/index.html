@@ -1213,7 +1213,7 @@ ript>
 </article>
 
 <article id="file-upload">
-  <h4>Upload de Arquivo</h4>
+  <h1>Upload de Arquivo</h1>
 <p>São elementos de formulário que permitem a seleção de arquivos locais para envio ao servidor. Os navegadores possuem campos de upload nativos e os renderizam sempre que encontrarm um elemento "input" do tipo "file". Em termos de usabilidade, a principal vantagem de se utilizar o elemento nativo é se aproveitar da experiência já adquirida pelo usuário em outros sistemas na web. Contudo, o campo de upload nativo não oferece muitas funcionalidades como barra de progresso, upload em mais de uma etapa, remoçao do arquivo adicionado, entre outras.</p>
 <p>Desta forma, sempre que houver necessidade de alguma funcionalidade adicional, será necessário estender o comportamento nativo ou integrar alguma biblioteca existente como a <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">jQuery File Upload</a> por exemplo.</p>
 
@@ -1233,7 +1233,60 @@ ript>
 
 <article id="context-help">
   <h1>Ajuda de Contexto</h1>
-<p></p>
+<p>Este elemento é muito útil em formulários, principalmente formulários extensos, com campos específicos de negócio.</p>
+<p>É importante notar que, este componente só será útil se for apresentado, de fato, no contexto em que é necessário. Ou seja, não devemos redirecionar o usuário para uma página de ajuda ou algo do tipo. O ideal é apresentar a ajuda em um <em>popover</em>, <em>tooltip</em> ou até mesmo em um <em>modal</em>.</p>
+<p>Quanto ao conteúdo da ajuda, o ideal é ser sucinto e objetivo. Restringir a informação apresentada às dúvidas que, por ventura, possam ocorrer durante o preenchimento do campo.</p>
+<p>Para o componente, sugerimos que seja disponibilizado (quando houver ajuda disponível) um ícone sugestivo ao lado do rótulo do campo.</p>
+
+<h4>Exemplo</h4>
+<div class="tr-example">
+  <div class="row">
+
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label for="ex">Rótulo do Campo 
+            <a id="popover" role="button"><i class="fa fa-question-circle"></i></a>
+          </label>
+          <input type="text" class="form-control" name="ex" id="ex">    
+        </div>      
+      </form>
+      <script>
+        $('document').ready(function() {
+          $('#popover').popover({
+            html: true,
+            content: '<p style="font-weight: 100">O <em>popover</em> suporta até mesmo conteúdo <b>HTML</b></p>',
+            title: 'Título da <strong>Ajuda</strong>'
+          });  
+        });      
+      </script>    
+    </div>    
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+
+<div class="highlight">
+  <div class="highlight"><pre><code class="html">    <span class="nt">&lt;form&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;ex&quot;</span><span class="nt">&gt;</span>Rótulo do Campo 
+          <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">&quot;popover&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-question-circle&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;ex&quot;</span> <span class="na">id=</span><span class="s">&quot;ex&quot;</span><span class="nt">&gt;</span>    
+      <span class="nt">&lt;/div&gt;</span>      
+    <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;document&#39;</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#popover&#39;</span><span class="p">).</span><span class="nx">popover</span><span class="p">({</span>
+          <span class="nx">html</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;p style=&quot;font-weight: 100&quot;&gt;O &lt;em&gt;popover&lt;/em&gt; suporta até mesmo conteúdo &lt;b&gt;HTML&lt;/b&gt;&lt;/p&gt;&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Título da &lt;strong&gt;Ajuda&lt;/strong&gt;&#39;</span>
+        <span class="p">});</span>  
+      <span class="p">});</span>      
+    <span class="nt">&lt;/script&gt;</span> 
+  
+</code></pre></div>
+</div>
 </article>
  
         </section>

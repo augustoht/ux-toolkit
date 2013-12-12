@@ -5,4 +5,57 @@ name: context-help
 ---
 
 <h1>Ajuda de Contexto</h1>
-<p></p>
+<p>Este elemento é muito útil em formulários, principalmente formulários extensos, com campos específicos de negócio.</p>
+<p>É importante notar que, este componente só será útil se for apresentado, de fato, no contexto em que é necessário. Ou seja, não devemos redirecionar o usuário para uma página de ajuda ou algo do tipo. O ideal é apresentar a ajuda em um <em>popover</em>, <em>tooltip</em> ou até mesmo em um <em>modal</em>.</p>
+<p>Quanto ao conteúdo da ajuda, o ideal é ser sucinto e objetivo. Restringir a informação apresentada às dúvidas que, por ventura, possam ocorrer durante o preenchimento do campo.</p>
+<p>Para o componente, sugerimos que seja disponibilizado (quando houver ajuda disponível) um ícone sugestivo ao lado do rótulo do campo.</p>
+
+<h4>Exemplo</h4>
+<div class="tr-example">
+  <div class="row">
+
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label for="ex">Rótulo do Campo 
+            <a id="popover" role="button"><i class="fa fa-question-circle"></i></a>
+          </label>
+          <input type="text" class="form-control" name="ex" id="ex">    
+        </div>      
+      </form>
+      <script>
+        $('document').ready(function() {
+          $('#popover').popover({
+            html: true,
+            content: '<p style="font-weight: 100">O <em>popover</em> suporta até mesmo conteúdo <b>HTML</b></p>',
+            title: 'Título da <strong>Ajuda</strong>'
+          });  
+        });      
+      </script>    
+    </div>    
+  </div>
+</div>
+
+<h4>Código do exemplo:</h4>
+
+<div class="highlight">
+  {% highlight HTML %}
+    <form>
+      <div class="form-group">
+        <label for="ex">Rótulo do Campo 
+          <a id="popover" role="button"><i class="fa fa-question-circle"></i></a>
+        </label>
+        <input type="text" class="form-control" name="ex" id="ex">    
+      </div>      
+    </form>
+    <script>
+      $('document').ready(function() {
+        $('#popover').popover({
+          html: true,
+          content: '<p style="font-weight: 100">O <em>popover</em> suporta até mesmo conteúdo <b>HTML</b></p>',
+          title: 'Título da <strong>Ajuda</strong>'
+        });  
+      });      
+    </script> 
+  {% endhighlight %}
+</div>
