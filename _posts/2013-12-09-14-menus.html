@@ -5,7 +5,63 @@ name: menus
 ---
 
 <h1>Menus</h1>
+
 <p>Tratamos um pouco a respeito dos menus na seção <a href="#navbar-top">Navegação Global</a>, porém, aqui trataremos mais a respeito dos tipos de menu que podem atuar na navegação dos sistemas como um todo.</p>
+
+<p>Em portais de conteúdo, os menus desempenham um papel chave na experiência de uso do site como um todo. Menus complexos, demasiadamente profundos, mal agrupados ou mal desenhados trazem sensações desgastantes e podem afastar os usuários e banir visitas futuras. Em menus com muitos items e categorias, chegar a um produto final eficiente requer bastante esforço. Segundo Kathryn Whitenton em <a href="http://www.nngroup.com/articles/flat-vs-deep-hierarchy/" target="_blank"><em>Flat vs. Deep Website Hierarchies</em></a>, chama atenção para o <em>trade-off</em> entre profundidade e largura na hierarquia e consequentemente nos menus. Ela diz que muitos níveis de menus confundem o usuário além de desgastá-lo mentalmente podendo levá-lo a desistir da pesquisa. Em contrapartida, menus muito largos (com muitos itens em um único nível) podem sobrepor categorias e deixar o usuário em dúvida sobre qual seria o item pai daquele o qual procura. Assim, construir um bom menu está em encontrar este equilíbrio.</p> 
+
+<p>Felizmente, aplicações web contam, por natureza, com um volume de conteúdo muitas vezes menor. Isto facilita um pouco a construção de um bom menu, ms, ainda assim, é preciso ponderação e bom senso.</p>
+
+<p>Uma boa dica é que <strong>nem tudo precisa estar presente no menu</strong>. Ações por exemplo, devem estar associadas ao contexto da à qual pertence. O nível mais específico também pode ser omitido do menu principal, desde que o item pai seja bastante sugestivo com relação a que tipo de filhos contém. Os filhos podem então ser exibidos em um menu local, associado ao conteúdo daquele contexto.</p>
+
+<p>A equipe do Twitter Bootstrap retirou a classe ".submenu" do <em>framework</em> em sua versão 3. Segundo <a href="https://github.com/twbs/bootstrap/pull/6342#issuecomment-11594010">Mark Otto</a>, um dos autores, isto se deve ao fato de que a nova versão seguiu a abordagem <a href="http://www.abookapart.com/products/mobile-first" target="_blank"><em>mobile first</em></a> e menus com mais de dois níveis estão em desuso no desenvolvimento web atual, principalmente no desenvolvimento web móvel. </p>
+
+<p>Considerando o exposto, sugerimos que o menu principal da aplicação (o global), sempre que possível, fique restrito entre um e dois níveis de navegação. Mas, quando a responsividade e portabilidade entre dispositivos não for um requisito, é aceitável a utilização de um terceiro nível. Quando houver necessidade de ainda mais níveis, devemos avaliar a opção de se um criar menu local com os itens pertinentes.</p>
+
+<div class="tr-example">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logomarca</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>      
+    </div>
+  </nav>
+</div>
 
 
 
