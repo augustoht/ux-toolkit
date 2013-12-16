@@ -1,5 +1,6 @@
 <h1>Formulário de Login</h1>
-<p>Formulários de login são componentes muito comuns e a grande maioria dos usuários que possuem alguma experiência com sistemas web podem reconhecê-los e operá-los fácilmente. No entanto, definir um padrão para estes componentes pode reduzir o <em>gap</em> entre sistemas diferentes.</p>
+<p>Formulários de login são componentes muito comuns e a grande maioria dos usuários que possuem alguma experiência com sistemas web podem reconhecê-los e operá-los fácilmente. No entanto, definir um padrão para estes componentes que permeie todos os sistemas da organização dá ao usuário a sensação de coesão, consistência, organização e isto aumenta a credibilidade.</p>
+
 <p>Itens comuns em formulários de login são:</p>
 <ul>
   <li>Labels;</li>
@@ -9,9 +10,12 @@
   <li>Link para cadastro de conta;</li>
   <li>Checkbox para a persistência da sessão.</li>
 </ul>
-<p>Contudo, os itens citados variam de acordo com a natureza do sistema. Em sistemas com cadastro de usuários restrito, não haverá link para cadastro de conta; sistemas com altos requisitos de segurança não devem fornecer persistência de sessão; etc.</p>
-<p>Segundo artigo publicado no site <a href="http://uxdesign.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">Ux Matters</a>, formulários devem trazer seus rótulos acima dos campos de entrada pois usuários fazem a leitura no sentido <em>top-down</em> e têm mais facilidade em associar o rótulo com o campo abaixo do que com o campo ao lado.</p>
-<p>É importante que os rótulos e o padrão visual dos campos e botões sejam consistentes entre os sistemas da organização. Devemos utilizar o rótulo "Entrar" para todos os botões de <strong><em>login</em></strong> dos sistemas. Também devemos destacar oo botão com a cor primária de cada sistema.</p>
+
+<p>Contudo, os itens citados variam de acordo com a natureza do sistema. Em sistemas com cadastro de usuários restrito, não haverá link para cadastro de conta; sistemas com rigorosos requisitos de segurança não devem fornecer persistência de sessão; etc.</p>
+
+<blockquote>Segundo artigo publicado no site <a href="http://uxdesign.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">Ux Matters</a>, formulários devem trazer seus rótulos acima dos campos de entrada pois usuários fazem a leitura em formulários no sentido <em>cima-para-baixo</em> e têm mais facilidade em associar o rótulo com o campo abaixo do que com o campo ao lado.</blockquote>
+
+<p>É importante que os rótulos e o padrão visual dos campos e botões sejam consistentes entre os sistemas da organização. Devemos utilizar o rótulo "Entrar" para todos os botões de <strong><em>login</em></strong> dos sistemas. Também devemos destacar o botão com a cor primária de cada sistema.</p>
 
 <h4>Exemplo:</h4>
 <div class="tr-example">
@@ -26,7 +30,7 @@
           <label for="exampleInputPassword1">Senha</label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira sua senha...">
         </div>        
-        <div class="checkbox">
+        <div class="checkbox" style="line-height:20px;">
           <label>
             <input type="checkbox"> Mantenha-me conectado
           </label>
