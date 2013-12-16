@@ -78,6 +78,7 @@ ript>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#whats">O que é isso?</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
         <li><a href="#components">Componentes</a></li>
         <li><a href="#about">Sobre</a></li>
       </ul>
@@ -118,7 +119,7 @@ ript>
   </div>
   <ul class="nav collapse navbar-collapse" id="sidebar-menu">
     
-      <li><a href="#landing">Página Inicial (Landing Page)</a></li>
+      <li><a href="#landing">Página Inicial</a></li>
     
       <li><a href="#navbar-top">Barra de Navegação Global</a></li>
     
@@ -158,17 +159,47 @@ ript>
 <p>Acreditamos que fornecendo um repositório de informações centralizado, as equipes de desenvolvimento poderão recorrer a um ponto comum, obtendo assim uma padronização natural do comportamento e das funcionalidades de cada componente.</p>
 
         </section>
+
+        <section id="accessibility">
+          <h1>Considerações sobre Acessibilidade</h1>
+
+<p>O uso de tecnologias assistivas é essencial para tornar o sistemas acessíveis a pessoas portadoras de necessidades especiais. Além disso, é uma recomendação que faz parte do <strong>Programa de Governo Eletrônico</strong> do Ministério do Planejamento, Orçamento e Gestão.</p>
+
+<p>O programa disponibiliza uma série de documentos contendo diretrizes para a construção de sites e aplicativos web. Esta suíte inclue recomendações sobre usabilidade, acessibilidade, redação, codificação, manutenção etc.</p>
+
+<p>Nos últimos anos, o Consórcio W3C, ciente da evolução dos sistemas web e o surgimento de elementos visuais cada vez mais ricos e complexos, lançou uma iniciativa para especificar recursos de acessibilidade a serem utilizados em aplicações de interface rica construídas em Ajax, HTML, Javascript e outras tecnologias relacionadas.</p> 
+
+<h3>Padrões Web em Governo Eletrônico e-PWG</h3>
+<ul>
+  <li><a href="http://www.governoeletronico.gov.br/biblioteca/arquivos/padroes-brasil-e-gov-cartilha-de-codificacao/download">e-PWG - Cartilha de Codificação</a></li>
+  <li><a href="http://www.governoeletronico.gov.br/biblioteca/arquivos/padroes-brasil-e-gov-guia-de-administracao/download">e-PWG - Guia de Administração</a></li>
+  <li><a href="http://www.governoeletronico.gov.br/biblioteca/arquivos/padroes-brasil-e-gov-cartilha-de-usabilidade/download">e-PWG - Cartilha de Usabilidade</a></li>
+  <li><a href="http://www.governoeletronico.gov.br/biblioteca/arquivos/padroes-brasil-e-gov-cartilha-de-redacao-web/download">e-PWG - Cartilha de Redação WEB</a></li>
+</ul>
+
+<h3>Modelo de Acessibilidade de Governo Eletrônico - e-MAG</h3>
+<ul>
+  <li><a href="http://www.governoeletronico.gov.br/biblioteca/arquivos/e-mag-3.0/download">Modelo de Acessibilidade de Governo Eletrônico - versão 3.0</a></li>
+</ul>
+
+<h3>W3C Web Accessity Initiative - WAI</h3>
+<ul>
+  <li><a href="http://www.w3.org/WAI/">Página da iniciativa</a></li>
+  <li><a href="http://www.w3.org/WAI/intro/aria">Recomendações para Aplicações Ricas - WAI-ARIA</a></li>
+  <li><a href="http://tableless.com.br/wai-aria-estendendo-o-significado-das-interacoes/#.Uq7yDvRDthY">Artigo em português sobre WAI-ARIA</a></li>
+</ul>
+        </section>
         
 
         <section id="components">
           
 <article id="landing">
-  <h2>Página Inicial - Landing Page</h2>
-<p>Para o caso de ferramentas e utilitários para o suporte às atividades de seus usuários, precisamos de uma <strong>página inicial</strong> objetiva.</p>
+  <h2>Página Inicial</h2>
+<p>No caso de ferramentas e utilitários para o suporte às atividades de seus usuários, precisamos de uma <strong>página inicial</strong> objetiva.</p>
 
 <p>Sugerimos a inclusão de um pequeno texto contendo um <i>overview</i> das principais funcionalidades do sistema. Este recurso auxiliará usuários que não estão certos do sistema que procuram. Este texto também pode conter instruções para os primeiros passos do usuário no sistema, como a ação de <i>login</i> por exemplo</p>
 
-<p>Em caso de sistemas que requeiram autenticação, é importante que as funcionalidades do sistema não sejam expostas, mesmo que estejam bloqueadas para o acesso do usuário não autorizado. Isto porque, a experiência de acesso negado gera frustração aos usuários. Assim, se o usuário em questão não tem acesso, melhor omití-lo que proibí-lo.</p>
+<p>Em caso de sistemas que requeiram autenticação, é importante que as funcionalidades do sistema não sejam expostas, mesmo que estejam bloqueadas para o acesso do usuário não autorizado. Isto porque, a experiência de acesso negado gera frustração aos usuários. Assim, se o usuário em questão não tem acesso, melhor omitir a funcionalidade que proibi-la.</p>
 
 <p>Podemos também incluir o formulário de login na página inicial.</p>
 
@@ -202,9 +233,9 @@ ript>
 
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <label for="inputUsuario" class="col-sm-2 control-label">Usuário</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <input type="text" class="form-control" id="inputUsuario" placeholder="Usuário">
           </div>
         </div>
         <div class="form-group">
@@ -224,7 +255,7 @@ ript>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <a class="btn btn-default" onclick="javascript:void(0)">Sign in</a>
+            <a class="btn btn-default" onclick="javascript:void(0)">Entrar</a>
           </div>
         </div>
       </form>
@@ -257,9 +288,9 @@ ript>
 
         <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
           <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;inputEmail3&quot;</span> <span class="na">class=</span><span class="s">&quot;col-sm-2 control-label&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;inputUsuario&quot;</span> <span class="na">class=</span><span class="s">&quot;col-sm-2 control-label&quot;</span><span class="nt">&gt;</span>Usuário<span class="nt">&lt;/label&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-10&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;inputEmail3&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;inputUsuario&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Usuário&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
           <span class="nt">&lt;/div&gt;</span>
           <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
@@ -279,7 +310,7 @@ ript>
           <span class="nt">&lt;/div&gt;</span>
           <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-offset-2 col-sm-10&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Entrar<span class="nt">&lt;/button&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
           <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/form&gt;</span>
@@ -295,9 +326,12 @@ ript>
 
 <article id="navbar-top">
   <h1>Barra de Navegação Global</h1>
-<p>A navegação global tem mais relação com a taxonomia das informações a serem exibidas que com suas características técnicas. Uma boa navegação é constituída por itens equivalentes em cada nível. Por exemplo: Se temos um item "Mamífero" no primeiro nível, um segundo item deveria ser "Felino" e não "Gato" pois este último deveria estar no nível imediatamente inferior juntamente com os tigres e leões.</p>
-<p>Feita esta observação, em termos de componentes, devemos usar items genéricos no primeiro nível e como em webapps o conteúdo não é muito extenso, então ómitir os niveis inferiores é bem razoável (em portais de conteúdo, pode-se utilizar níveis inferiores com muitos itens e recursos visuais ou exibir níveis inferiores logo de início). </p>
-<p>Não há uma regra definida no que se refere à quantidade de níveis de menu devemos manter. Contudo, é notório que menus muito sobrecarregados são fontes de confusão para os usuários. Caso a hierarquia seja estensa, é melhor utilizar-se de outros componentes de navegação para complementar a barra de navegação global como por exemplo o <a href="#side-menu">Menu Lateral</a>.</p>
+<p>A navegação global tem mais relação com a taxonomia das informações a serem exibidas do que com suas características técnicas. Os itens de cada nível devem ser ser coerentes entre si e obedecer à classificação hierárquica.</p>
+
+<p>Não há uma única regra no que se refere à quantidade de níveis que devemos utilizar. Contudo, sabemos que menus com mais de três níveis são fontes de confusão para os usuários (Consulte seção <a href="#menus"> menus</a>). Quando a classificação hierárquia for muito extensa, é melhor utilizar-se de outros controles de navegação para complementar a barra global, como por exemplo o <a href="#side-menu">Menu Lateral</a>.</p>
+
+<p>Com relação à acessibilidade, a cartilha de Governo Eletrônico <a href="http://www.governoeletronico.gov.br/acoes-e-projetos/e-MAG">e-MAG</a> recomenda que se evite o uso de menus de cortina <em>(pull-down)</em>, caixas de seleção, <em>scrolls</em> na navegação principal. Esta recomendação se deve ao fato de que as informações ocultas podem estar inacessíveis aos softwares assistivos utilizados. Mas, se por algum motivo, for extremamente necessário o uso de algum dos recursos citados, as limitações destes recursos poderão ser contornadas utilizando-se da especificação ARIA. (veja seção sobre <a href="#accessibility">Acessibilidade</a>) </p>
+
 <p>Itens que podem estar presentes na barra de navegação global:</p>
 <ul>
   <li>Logomarca (Brand);</li>
@@ -369,9 +403,9 @@ ript>
     </nav>
   </div>
 </div>
-<h4>Código do exemplo:</h4>
+<h4>Código do exemplo (com ARIA):</h4>
 <div class="highlight">
-  <div class="highlight"><pre><code class="html">  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+  <div class="highlight"><pre><code class="html">  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Menu Principal&quot;</span><span class="nt">&gt;</span>
       <span class="c">&lt;!-- Itens são agrupados quando visualizados em dispositivos móveis --&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar-header&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> 
@@ -385,49 +419,49 @@ ript>
       <span class="nt">&lt;/div&gt;</span>
 
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapse navbar-collapse&quot;</span> <span class="na">id=</span><span class="s">&quot;collapse-menu&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>          
-          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span> <span class="na">role=</span><span class="s">&quot;menubar&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>          
+          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
               Item <span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
             <span class="nt">&lt;/ul&gt;</span>
           <span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;/ul&gt;</span>
         <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-left&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
           <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisa...&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Pesquisa&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisa...&quot;</span><span class="nt">&gt;</span>
           <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;/form&gt;</span>
         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;badge pull-right&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/span&gt;</span>
               <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-user&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
           <span class="nt">&lt;/li&gt;</span>
-          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
               Configurações<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
             <span class="nt">&lt;/ul&gt;</span>
           <span class="nt">&lt;/li&gt;</span>
-          <span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;label label-default&quot;</span><span class="nt">&gt;</span>v0.0.0rc1<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;label label-default&quot;</span><span class="nt">&gt;</span>v0.0.0rc1<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;/ul&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/nav&gt;</span>
@@ -438,7 +472,8 @@ ript>
 
 <article id="login-form">
   <h1>Formulário de Login</h1>
-<p>Formulários de login são componentes muito comuns e a grande maioria dos usuários que possuem alguma experiência com sistemas web podem reconhecê-los e operá-los fácilmente. No entanto, definir um padrão para estes componentes pode reduzir o <em>gap</em> entre sistemas diferentes.</p>
+<p>Formulários de login são componentes muito comuns e a grande maioria dos usuários que possuem alguma experiência com sistemas web podem reconhecê-los e operá-los fácilmente. No entanto, definir um padrão para estes componentes que permeie todos os sistemas da organização dá ao usuário a sensação de coesão, consistência, organização e isto aumenta a credibilidade.</p>
+
 <p>Itens comuns em formulários de login são:</p>
 <ul>
   <li>Labels;</li>
@@ -448,9 +483,12 @@ ript>
   <li>Link para cadastro de conta;</li>
   <li>Checkbox para a persistência da sessão.</li>
 </ul>
-<p>Contudo, os itens citados variam de acordo com a natureza do sistema. Em sistemas com cadastro de usuários restrito, não haverá link para cadastro de conta; sistemas com altos requisitos de segurança não devem fornecer persistência de sessão; etc.</p>
-<p>Segundo artigo publicado no site <a href="http://uxdesign.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">Ux Matters</a>, formulários devem trazer seus rótulos acima dos campos de entrada pois usuários fazem a leitura no sentido <em>top-down</em> e têm mais facilidade em associar o rótulo com o campo abaixo do que com o campo ao lado.</p>
-<p>É importante que os rótulos e o padrão visual dos campos e botões sejam consistentes entre os sistemas da organização. Devemos utilizar o rótulo "Entrar" para todos os botões de <strong><em>login</em></strong> dos sistemas. Também devemos destacar oo botão com a cor primária de cada sistema.</p>
+
+<p>Contudo, os itens citados variam de acordo com a natureza do sistema. Em sistemas com cadastro de usuários restrito, não haverá link para cadastro de conta; sistemas com rigorosos requisitos de segurança não devem fornecer persistência de sessão; etc.</p>
+
+<blockquote>Segundo artigo publicado no site <a href="http://uxdesign.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">Ux Matters</a>, formulários devem trazer seus rótulos acima dos campos de entrada pois usuários fazem a leitura em formulários no sentido <em>cima-para-baixo</em> e têm mais facilidade em associar o rótulo com o campo abaixo do que com o campo ao lado.</blockquote>
+
+<p>É importante que os rótulos e o padrão visual dos campos e botões sejam consistentes entre os sistemas da organização. Devemos utilizar o rótulo "Entrar" para todos os botões de <strong><em>login</em></strong> dos sistemas. Também devemos destacar o botão com a cor primária de cada sistema.</p>
 
 <h4>Exemplo:</h4>
 <div class="tr-example">
@@ -465,7 +503,7 @@ ript>
           <label for="exampleInputPassword1">Senha</label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira sua senha...">
         </div>        
-        <div class="checkbox">
+        <div class="checkbox" style="line-height:20px;">
           <label>
             <input type="checkbox"> Mantenha-me conectado
           </label>
@@ -505,13 +543,14 @@ ript>
 
 <article id="search-box">
   <h1>Campo de Pesquisa</h1>
-<p>Definimos <strong>Campo de Pesquisa</strong> (<em>Search Box = input field + submit button</em>) como aquele componente utilizado para realizar buscas no contexto global da aplicação. Geralmente, este campo é utilizado para mecanismos de busca <em>full-text</em>.</p>
-<p>Em alguns casos, quando a aplicação trata de uma entidade de domínio principal específica, o Campo de Pesquisa poderá estar em um escopo mais restrito, mas, via de regra, campos de pesquisa possuem escopo global.</p>
-<p>Componentes de pesquisa com escopos específicos são componentes de filtragem. Exemplos de <em>search box</em> atuando como filtros geralmente são encontrados em tabelas e grids de dados.</p>
+<p>Campos de Pesquisa <em>Search Box = input field + submit button</em>) podem atuar com funções diferentes em diferentes contextos.</p>
+<p>Pode atuar como aquele controle utilizado para realizar buscas no contexto global da aplicação. Geralmente, este campo é utilizado para mecanismos de busca <em>full-text</em>. Em alguns casos, quando a aplicação trata de uma entidade de domínio principal específica, o Campo de Pesquisa poderá estar em um escopo mais restrito, mas, via de regra, campos de pesquisa possuem escopo global.</p>
+<p>Campos de pesquisa com escopos específicos são componentes de filtragem. Exemplos de <em>search box</em> atuando como <a href="#list-filters">filtros</a> geralmente são encontrados em tabelas e grids de dados.</p>
 <p>Campos de pesquisa devem estar <strong>claramente visíveis</strong>, <strong>reconhecíveis</strong> e <strong>fáceis de usar</strong>. Para alcançar estas três caracteríscas sugerimos a utilização de um <strong>botão com ícone lupa acoplado ao input field</strong>, a utilização de um </trong>placeholder com o texto "Busca"</strong> e utilização de recurso <strong><em>live search</em></strong>.
 <p>Estudo realizado por Jacob Nielsen mostrou que o tamanho médio de campos de pesquisa existentes era de 18 caracteres e que, com este tamanho, 27% das consultas eram maiores que o tamanho máximo do campo. O estudo mostrou também que utilizando campos de pesquisa com o tamanho de 27 caracteres, 90% das consultas estarão adequadas ao tamanho do campo.</p>
 <h3>Pontos relevantes:</h3>
 <ul>
+  <li>A cartilha de usabilidade do <a href="#accessibility">e-PWG</a> diz: "A ferramenta de busca presente em todas as páginas. Preferencialmente no canto superior direito" (sic).</li>
   <li>A largura não deve ser muito grande para não atrair toda a atenção ao componente, e nem deve ser muito pequena pois assim induz o usuário a utilizar termos mais curtos e imprecisos.</li>
   <li>O posicionamento deve ser fixo e se aproveitar dos padrões mais comumente utilizados.</li>
   <li>Botões muito pequenos desestimulam a utilização da pesquisa pois obriga um posicionamento muito preciso do cursor.</li>
@@ -521,6 +560,7 @@ ript>
   <li>Utilizar design exclusivo, ou seja, nenhum outro componente com funcionalidade diferente deverá se parecer com um Campo de Pesquisa.</li>
   <li>Utilize apenas 1 botão.</li>
 </ul>
+
 <br>
 <h3>Exemplo:</h3>
 
@@ -537,7 +577,7 @@ ript>
       </ul>
 
       <!-- Campo de Pesquisa --> 
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Pesquisar...">
         </div>
@@ -571,7 +611,7 @@ ript>
       <span class="nt">&lt;/ul&gt;</span>
 
       <span class="c">&lt;!-- Campo de Pesquisa --&gt;</span> 
-      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-left&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-right&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
           <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisar...&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
@@ -1366,15 +1406,17 @@ ript>
 <article id="menus">
   <h1>Menus</h1>
 
-<p>Tratamos um pouco a respeito dos menus na seção <a href="#navbar-top">Navegação Global</a>, porém, aqui trataremos mais a respeito dos tipos de menu que podem atuar na navegação dos sistemas como um todo.</p>
+<p>Tratamos um pouco a respeito dos menus na seção <a href="#navbar-top">Navegação Global</a>. Nesta seção, abordaremos mais especificamente a construção dos menus envolvidos na navegação de todo o site.</p>
 
-<p>Em portais de conteúdo, os menus desempenham um papel chave na experiência de uso do site como um todo. Menus complexos, demasiadamente profundos, mal agrupados ou mal desenhados trazem sensações desgastantes e podem afastar os usuários e banir visitas futuras. Em menus com muitos items e categorias, chegar a um produto final eficiente requer bastante esforço. Segundo Kathryn Whitenton em <a href="http://www.nngroup.com/articles/flat-vs-deep-hierarchy/" target="_blank"><em>Flat vs. Deep Website Hierarchies</em></a>, chama atenção para o <em>trade-off</em> entre profundidade e largura na hierarquia e consequentemente nos menus. Ela diz que muitos níveis de menus confundem o usuário além de desgastá-lo mentalmente podendo levá-lo a desistir da pesquisa. Em contrapartida, menus muito largos (com muitos itens em um único nível) podem sobrepor categorias e deixar o usuário em dúvida sobre qual seria o item pai daquele o qual procura. Assim, construir um bom menu está em encontrar este equilíbrio.</p> 
+<p>Em portais de conteúdo, os menus desempenham um papel central na experiência de uso do site como um todo. Menus complexos, demasiadamente profundos, mal agrupados ou mal desenhados trazem sensações desgastantes e podem afastar os usuários e banir visitas futuras. Em menus com muitos items e categorias, chegar a um produto final eficiente requer bastante esforço. No artigo <a href="http://www.nngroup.com/articles/flat-vs-deep-hierarchy/" target="_blank"><em>Flat vs. Deep Website Hierarchies</em></a>,  Kathryn Whitenton chama atenção para o <em>trade-off</em> entre profundidade e largura na hierarquia e consequentemente nos menus. Segundo ela, muitos níveis de menus confundem o usuário além de desgastá-lo mentalmente podendo levá-lo a desistir da pesquisa. Em contrapartida, menus muito largos (itens demasiados em um mesmo nível) podem gerar sobreposição entre categorias de modo a deixar o usuário em dúvida. Assim, construir um bom menu envolve encontrar este equilíbrio.</p> 
 
-<p>Felizmente, aplicações web contam, por natureza, com um volume de conteúdo muitas vezes menor. Isto facilita um pouco a construção de um bom menu, ms, ainda assim, é preciso ponderação e bom senso.</p>
+<p>Felizmente, aplicações web contam, por natureza, com um volume de conteúdo muitas vezes menor. Isto facilita um pouco a construção de um bom menu, mas, ainda assim, é preciso uma boa dose de ponderação e bom senso.</p>
 
-<p>Uma boa dica é que <strong>nem tudo precisa estar presente no menu</strong>. Ações por exemplo, devem estar associadas ao contexto da à qual pertence. O nível mais específico também pode ser omitido do menu principal, desde que o item pai seja bastante sugestivo com relação a que tipo de filhos contém. Os filhos podem então ser exibidos em um menu local, associado ao conteúdo daquele contexto.</p>
+<p>Uma boa dica: <strong>nem tudo que se parece um link precisa estar presente no menu</strong>. Ações por exemplo, devem estar associadas ao contexto ao qual pertencem. O nível mais específico também pode ser omitido do menu principal, desde que a hierarquia seja óbvia</p>
 
-<p>A equipe do Twitter Bootstrap retirou a classe ".submenu" do <em>framework</em> em sua versão 3. Segundo <a href="https://github.com/twbs/bootstrap/pull/6342#issuecomment-11594010">Mark Otto</a>, um dos autores, isto se deve ao fato de que a nova versão seguiu a abordagem <a href="http://www.abookapart.com/products/mobile-first" target="_blank"><em>mobile first</em></a> e menus com mais de dois níveis estão em desuso no desenvolvimento web atual, principalmente no desenvolvimento web móvel. </p>
+<p>Imaginemos um exemplo: se tivermos um item no menu chamado usuários; não necessitamos adicionar um item filho no menu chamado "Novo usuário" pois estará claro que as ações referentes a usuários estarão aninhadas nesta seção. Os filhos podem então ser exibidos em um menu local representado por um componente/controle específico.</p>
+
+<blockquote>A equipe do Twitter Bootstrap retirou a classe ".submenu" do <em>framework</em> em sua versão 3. Segundo <a href="https://github.com/twbs/bootstrap/pull/6342#issuecomment-11594010">Mark Otto</a>, um dos autores, isto se deve ao fato de que a nova versão seguiu a abordagem <a href="http://www.abookapart.com/products/mobile-first" target="_blank"><em>mobile first</em></a> e menus com mais de dois níveis estão em desuso no desenvolvimento web atual, principalmente no desenvolvimento web móvel. </blockquote>
 
 <p>Considerando o exposto, sugerimos que o menu principal da aplicação (o global), sempre que possível, fique restrito entre um e dois níveis de navegação. Mas, quando a responsividade e portabilidade entre dispositivos não for um requisito, é aceitável a utilização de um terceiro nível. Quando houver necessidade de ainda mais níveis, devemos avaliar a opção de se um criar menu local com os itens pertinentes.</p>
 
