@@ -13,6 +13,8 @@ name: datefield
   <li>Distinção visual bem destacada para o dia selecionado;</li>
   <li>Atalho para o "dia de hoje";</li>
   <li>Flexibilidade técnica para formatos diversos;</li>
+  <li>Exibir formato de exemplo ou utilizar máscara;</li>
+  <li>Limite o campo para o número exato de caracteres necessários que no caso de datas deve ser 10 incluindo os separadores "/".</li>
 </ul>
 
 <p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
@@ -51,6 +53,8 @@ name: datefield
                 showMonthAfterYear: false,
                 yearSuffix: ''};
           $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+
+          $( "#datepicker" ).mask("99/99/9999");
           $( "#datepicker" ).datepicker({ 
             showButtonPanel: true,
             changeMonth: true,
@@ -94,6 +98,8 @@ name: datefield
                 showMonthAfterYear: false,
                 yearSuffix: ''};
           $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+
+          $( "#datepicker" ).mask("99/99/9999");
           $( "#datepicker" ).datepicker({ 
             showButtonPanel: true,
             changeMonth: true,

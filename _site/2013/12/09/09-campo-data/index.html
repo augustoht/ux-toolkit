@@ -7,6 +7,8 @@
   <li>Distinção visual bem destacada para o dia selecionado;</li>
   <li>Atalho para o "dia de hoje";</li>
   <li>Flexibilidade técnica para formatos diversos;</li>
+  <li>Exibir formato de exemplo ou utilizar máscara;</li>
+  <li>Limite o campo para o número exato de caracteres necessários que no caso de datas deve ser 10 incluindo os separadores "/".</li>
 </ul>
 
 <p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
@@ -45,6 +47,8 @@
                 showMonthAfterYear: false,
                 yearSuffix: ''};
           $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+
+          $( "#datepicker" ).mask("99/99/9999");
           $( "#datepicker" ).datepicker({ 
             showButtonPanel: true,
             changeMonth: true,
@@ -87,6 +91,8 @@
                 <span class="nx">showMonthAfterYear</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
                 <span class="nx">yearSuffix</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">};</span>
           <span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">setDefaults</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">regional</span><span class="p">[</span><span class="s1">&#39;pt-BR&#39;</span><span class="p">]);</span>
+
+          <span class="nx">$</span><span class="p">(</span> <span class="s2">&quot;#datepicker&quot;</span> <span class="p">).</span><span class="nx">mask</span><span class="p">(</span><span class="s2">&quot;99/99/9999&quot;</span><span class="p">);</span>
           <span class="nx">$</span><span class="p">(</span> <span class="s2">&quot;#datepicker&quot;</span> <span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span> 
             <span class="nx">showButtonPanel</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">changeMonth</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>

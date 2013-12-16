@@ -8,6 +8,8 @@
   <li>Atalho para o "dia de hoje";</li>
   <li>Flexibilidade técnica para formatos diversos;</li>
   <li>Rótulos claros e sugestivos. Neste caso, os rótulos dispostos na mesma linha torna o componente mais intuitivo.</li>
+  <li>Exibir formato de exemplo ou utilizar máscara;</li>
+  <li>Limite o campo para o número exato de caracteres necessários que no caso de datas deve ser 10 incluindo os separadores "/".</li>
 </ul>
 
 <p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
@@ -58,6 +60,7 @@
               showMonthAfterYear: false,
               yearSuffix: ''};
         $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+        $( ".form-control.date" ).mask("99/99/9999");
         $( ".form-control.date" ).datepicker({ 
           showButtonPanel: true,
           changeMonth: true,
