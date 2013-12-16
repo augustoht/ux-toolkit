@@ -24,6 +24,7 @@
     <script type="text/javascript" src="js/select2/select2.js"></script>
     <script type="text/javascript" src="js/select2/select2_locale_pt-BR.js"></script>
     <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>    
 
     <!-- Backgrid.js dependencies -->
@@ -374,21 +375,11 @@ ript>
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Pesquisa...">
-          </div>
-          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-        </form>
+
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#">
-              <span class="badge pull-right">4</span>
-              <i class="fa fa-user"></i>
-            </a>
-          </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configurações<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Configurações<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">Subitem</a></li>
               <li><a href="#">Subitem</a></li>
@@ -396,76 +387,98 @@ ript>
               <li class="divider"></li>
               <li><a href="#">Subitem</a></li>
             </ul>
-          </li>
-          <li><span class="label label-default">v0.0.0rc1</span></li>
+          </li>          
         </ul>
+        
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Pesquisa...">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="badge pull-right">4</span>
+              <i class="fa fa-bell"></i>
+            </a>
+          </li>
+        </ul>
+
+
       </div><!-- /.navbar-collapse -->
     </nav>
   </div>
 </div>
 <h4>Código do exemplo (com ARIA):</h4>
 <div class="highlight">
-  <div class="highlight"><pre><code class="html">  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Menu Principal&quot;</span><span class="nt">&gt;</span>
-      <span class="c">&lt;!-- Itens são agrupados quando visualizados em dispositivos móveis --&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar-header&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> 
-          <span class="na">data-target=</span><span class="s">&quot;#collapse-menu&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle navigation<span class="nt">&lt;/span&gt;</span>
-          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-        <span class="nt">&lt;/button&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navbar-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Logomarca<span class="nt">&lt;/a&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
+  <div class="highlight"><pre><code class="html">  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Brand and toggle get grouped for better mobile display --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar-header&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-target=</span><span class="s">&quot;#bs-example-navbar-collapse-1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle navigation<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navbar-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Logomarca<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapse navbar-collapse&quot;</span> <span class="na">id=</span><span class="s">&quot;collapse-menu&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span> <span class="na">role=</span><span class="s">&quot;menubar&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>          
-          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
-              Item <span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;/ul&gt;</span>
-          <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;/ul&gt;</span>
-        <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-left&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Pesquisa&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisa...&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;button</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
-        <span class="nt">&lt;/form&gt;</span>
-        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;badge pull-right&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/span&gt;</span>
-              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-user&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-          <span class="nt">&lt;/li&gt;</span>
-          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">aria-haspopup=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
-              Configurações<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;/ul&gt;</span>
-          <span class="nt">&lt;/li&gt;</span>
-          <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;label label-default&quot;</span><span class="nt">&gt;</span>v0.0.0rc1<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;/ul&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/nav&gt;</span>
-    
+    <span class="c">&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapse navbar-collapse&quot;</span> <span class="na">id=</span><span class="s">&quot;bs-example-navbar-collapse-1&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>          
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>Item <span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+      
+      
+      
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+            Configurações<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Subitem<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        
+      <span class="nt">&lt;/ul&gt;</span>
+      
+      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-right&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisa...&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;badge pull-right&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-bell&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.navbar-collapse --&gt;</span>
+  <span class="nt">&lt;/nav&gt;</span>
+  
 </code></pre></div>
 </div>
 </article>
@@ -576,14 +589,6 @@ ript>
         <li><a href="#">Link</a></li>
       </ul>
 
-      <!-- Campo de Pesquisa --> 
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Pesquisar...">
-        </div>
-        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-      </form><!-- Campo de Pesquisa --> 
-
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuário <b class="caret"></b></a>
@@ -593,6 +598,16 @@ ript>
           </ul>
         </li>    
       </ul>
+
+      <!-- Campo de Pesquisa --> 
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Pesquisar...">
+        </div>
+        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+      </form><!-- Campo de Pesquisa --> 
+
+      
     </nav>
 
   </div>
@@ -610,14 +625,6 @@ ript>
         <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
       <span class="nt">&lt;/ul&gt;</span>
 
-      <span class="c">&lt;!-- Campo de Pesquisa --&gt;</span> 
-      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-right&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisar...&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
-      <span class="nt">&lt;/form&gt;</span><span class="c">&lt;!-- Campo de Pesquisa --&gt;</span> 
-
       <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
           <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
@@ -628,7 +635,15 @@ ript>
             <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Ação<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>            
           <span class="nt">&lt;/ul&gt;</span>
         <span class="nt">&lt;/li&gt;</span>    
-      <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>      
+
+      <span class="c">&lt;!-- Campo de Pesquisa --&gt;</span> 
+      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form navbar-right&quot;</span> <span class="na">role=</span><span class="s">&quot;search&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Pesquisar...&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-search&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
+      <span class="nt">&lt;/form&gt;</span><span class="c">&lt;!-- Campo de Pesquisa --&gt;</span> 
     <span class="nt">&lt;/nav&gt;</span>
   
 </code></pre></div>  
@@ -639,20 +654,20 @@ ript>
 <article id="list-filters">
   <h1>Filtros em Listagens</h1>
 
-<p>Filtros são componentes extremamente úteis em listagens de dados, principalmente quando lidamos com grandes volumes. Sua função é bastante intuitiva: filtrar os dados exibidos de acordo com os caracteres inseridos.</p>
+<p>Filtros são componentes extremamente úteis em listagens de dados, principalmente quando lidamos com grandes volumes. Sua função é bastante intuitiva: exibir apenas os dados que conferem com os caracteres inseridos. </p>
+<p>Visualmente, os componentes são bastante parecidos com o campo de pesquisa global, mas é desejável que apresente uma pequena variação estética que, associada ao contexto em que o filtro estará inserido, transmite ao usuário a idéia de que os dois componentes tem finalidades distintas, ainda que semelhantes.</p>
 <p>As principais características para estes componentes são:</p>
 <ul>
   <li>Distinção visual do componente (geralmente com associação a um ícone lupa);</li>
   <li>Filtragem automática e em "tempo real". É desejável que a filtragem seja disparada pelo evento <em>onkeyup</em> para que o usuário tenha <em>feedback imediato.</em></li>
   <li>Em alguns casos, quando o esforço de implentação seja pequeno, torna-se interessante atribuir um <em>highlight</em> nos termos da listagem que "casam" com o termo inserido.</li>
-  <li>Também é desejável que se permita a filtragem considerando qualquer campo de texto exibido no grid.</li>
-  <li>É importante que os filtros sejam visualmente distintos dos campos de pesquisa.</li>
+  <li>Também é desejável que se permita a filtragem considerando qualquer campo de texto exibido no grid.</li>  
 </ul>
 
 <h4>Exemplo:</h4>
 <div class="tr-example">
   <div class="row">
-    Veja o funcionamento do filtro no componente <a href="#grid">Grid</a>
+    Veja o funcionamento do filtro na seção <a href="#grid">Grid</a>
   </div>
 </div>
 
@@ -672,7 +687,7 @@ ript>
   <li><em>Feedback</em> visual como o uso de "spinners" por exemplo;</li>
   <li>Coerência na filtragem: os itens sugeridos devem estar de acordo com os caracteres digitados.</li>
 </ul>
-<p>É importante que todos os campos de todos os sistemas que tenham demandas semelhantes às descritas acima, apresente funcionalidade e modo de uso consistentes.</p>
+<p>É importante que todos os campos de todos os sistemas que tenham demandas semelhantes às descritas acima apresentem funcionalidade e modo de uso consistentes.</p>
 <p>Existem diversas bibliotecas <em>open source</em> em javascript que podem ser adicionados ao <em>front-end</em> dos aplicativos. Para ilustrar um componente de Seleção com Sugestão, utilizamos o <a href="http://ivaynberg.github.io/select2/">Select2</a> com o estilo fornecido por <a href="https://github.com/t0m/select2-bootstrap-css">select2-bootstrap-css</a> acessando a API pública de <a href="http://www.rottentomatoes.com/">RottenTomatoes.com</a>.</p>
 
 <h4>Exemplo:</h4>
@@ -844,12 +859,12 @@ ript>
 <p>Os grids são muito comuns em seções de cadastro (<a href="#crud">CRUD's</a>) para listar os objetos existentes de uma determinada entidade.</p>
 <p>Os recursos de usabilidade desejáveis em um grid de dados são:</p>
 <ul>
-  <li><strong>Simplicidade no design</strong>: por se tratar de um item naturalmente carregado de informações, suavizar o design mantendo o menor número de distrações possível na interface, ameniza a experiência do usuário.</li>
+  <li><strong>Simplicidade no design</strong>: por se tratar de um item naturalmente carregado de informações, suavizar o design mantendo o menor número de distrações possível na interface suaviza a experiência do usuário.</li>
   <li><strong>Ordenação</strong>: a ordenação é útil quando o usuário não tem um critério de busca preciso, por exemplo.</li>
   <li><strong>Filtragem</strong>: listas dinâmicas rapidamente demandam maneiras de refinar seus conteúdos para facilitar a busca de itens.</li>
   <li><strong>Ações</strong>: com o formato de tabela, ações globais e individuais tornam-se bastante intuitivas. As ações globais devem ser adicionadas à tabela em um cabeçalho, por exemplo. E as ações individuais devem ser adicionadas a uma célula de cada item, geralmente na última coluna.</li>
   <li><strong>Seleção</strong>: quando há a necessidade de ações em massa como remover, mover, alterar vários itens (mas não todos) de uma só vez, é necessário permitir a seleção dos itens a aplicar as ações. A seleção deve ser visualmente identificável e, via de regra, deve ser inserida na primeira coluna.</li>
-  <li><strong>Paginação</strong>: Listas muito extensas tornam-se incômodas visualmente. Assim, devemos incluir um recurso para paginar os resultados. O ideal é que a paginação esteja visível sem a necessidade de rolar a página. Se a listagem for muito extensa, pode-se utilizar dois elementos de paginação: no cabeçalho e no rodapé da tabela.</li>  
+  <li><strong>Paginação</strong>: Listas muito extensas tornam-se incômodas visualmente. Assim, devemos incluir um recurso para paginar os resultados. O ideal é que a paginação esteja visível sem a necessidade de rolar a página. Se a listagem for muito extensa, podem-se utilizar dois elementos de paginação: no cabeçalho e no rodapé da tabela.</li>  
 </ul>
 
 <p>O exemplo abaixo foi construído apenas no cliente utilizando as bibliotecas <a href="http://underscorejs.org/">Underscore.js</a>, <a href="http://backbonejs.org/">Backbone.js</a> e <a href="http://backgridjs.com/">Backgrid.js</a> com a finalidade de exemplificar como um componente <strong>Grid de Dados</strong> deve se parecer. </p>
@@ -1044,6 +1059,8 @@ ript>
   <li>Distinção visual bem destacada para o dia selecionado;</li>
   <li>Atalho para o "dia de hoje";</li>
   <li>Flexibilidade técnica para formatos diversos;</li>
+  <li>Exibir formato de exemplo ou utilizar máscara;</li>
+  <li>Limite o campo para o número exato de caracteres necessários que no caso de datas deve ser 10 incluindo os separadores "/".</li>
 </ul>
 
 <p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
@@ -1082,6 +1099,8 @@ ript>
                 showMonthAfterYear: false,
                 yearSuffix: ''};
           $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+
+          $( "#datepicker" ).mask("99/99/9999");
           $( "#datepicker" ).datepicker({ 
             showButtonPanel: true,
             changeMonth: true,
@@ -1124,6 +1143,8 @@ ript>
                 <span class="nx">showMonthAfterYear</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
                 <span class="nx">yearSuffix</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">};</span>
           <span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">setDefaults</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">regional</span><span class="p">[</span><span class="s1">&#39;pt-BR&#39;</span><span class="p">]);</span>
+
+          <span class="nx">$</span><span class="p">(</span> <span class="s2">&quot;#datepicker&quot;</span> <span class="p">).</span><span class="nx">mask</span><span class="p">(</span><span class="s2">&quot;99/99/9999&quot;</span><span class="p">);</span>
           <span class="nx">$</span><span class="p">(</span> <span class="s2">&quot;#datepicker&quot;</span> <span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span> 
             <span class="nx">showButtonPanel</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">changeMonth</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -1148,6 +1169,8 @@ ript>
   <li>Atalho para o "dia de hoje";</li>
   <li>Flexibilidade técnica para formatos diversos;</li>
   <li>Rótulos claros e sugestivos. Neste caso, os rótulos dispostos na mesma linha torna o componente mais intuitivo.</li>
+  <li>Exibir formato de exemplo ou utilizar máscara;</li>
+  <li>Limite o campo para o número exato de caracteres necessários que no caso de datas deve ser 10 incluindo os separadores "/".</li>
 </ul>
 
 <p>O exemplo abaixo foi construído com a biblioteca <a href="http://api.jqueryui.com/datepicker/">JQueryUI</a> com o propósito de ilustrar o componente <strong>Campo de Data</strong></p>
@@ -1198,6 +1221,7 @@ ript>
               showMonthAfterYear: false,
               yearSuffix: ''};
         $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+        $( ".form-control.date" ).mask("99/99/9999");
         $( ".form-control.date" ).datepicker({ 
           showButtonPanel: true,
           changeMonth: true,
@@ -1269,7 +1293,7 @@ ript>
 
 <article id="file-upload">
   <h1>Upload de Arquivo</h1>
-<p>São elementos de formulário que permitem a seleção de arquivos locais para envio ao servidor. Os navegadores possuem campos de upload nativos e os renderizam sempre que encontrarm um elemento "input" do tipo "file". Em termos de usabilidade, a principal vantagem de se utilizar o elemento nativo é se aproveitar da experiência já adquirida pelo usuário em outros sistemas na web. Contudo, o campo de upload nativo não oferece muitas funcionalidades como barra de progresso, upload em mais de uma etapa, remoçao do arquivo adicionado, entre outras.</p>
+<p>São elementos de formulário que permitem a seleção de arquivos locais para envio ao servidor. Os navegadores possuem campos de upload nativos e os renderizam sempre que encontram um elemento "input" do tipo "file". Em termos de usabilidade, a principal vantagem de se utilizar o elemento nativo é se aproveitar da experiência já adquirida pelo usuário em outros sistemas na web. Contudo, o campo de upload nativo não oferece muitas funcionalidades como barra de progresso, upload em mais de uma etapa, remoçao do arquivo adicionado, entre outras.</p>
 <p>Desta forma, sempre que houver necessidade de alguma funcionalidade adicional, será necessário estender o comportamento nativo ou integrar alguma biblioteca existente como a <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">jQuery File Upload</a> por exemplo.</p>
 
 <p> A principal característica desejável em um campo de upload de arquivo é sua distinção visual e intuitividade. Para isso, é interessante que utilizemos um padrão para o rótulo e também a utilização de um ícone sugestivo também padronizado para os botões: </p>
@@ -1351,10 +1375,10 @@ ript>
 <ul>
    <li>que utilizemos o mesmo rótulo em todos os elementos deste tipo e em todos os sistemas;</li>
    <li>utilizar algum componente animado, pois assim fica ainda mais claro que alguma atividade está sendo realizada;</li>
-   <li>bloquar a tela em segundo plano para impedir a interação do usuário enquanto o processamento é realizado;</li>
+   <li>bloquear a tela em segundo plano para impedir a interação do usuário enquanto o processamento é realizado;</li>
    <li>utilizar janela modal em tamanho fixo e não permitir redimensionamento.</li>
  </ul>  
-<p>O exemplo abaixo não representa o mesmo funcionamento do componente em um sistema real. Sua finalidade é apenas demonstrar o padrão visual recomendado.</p>
+<p>O exemplo abaixo não representa o funcionamento do componente em um sistema real. Sua finalidade é apenas demonstrar o padrão visual recomendado.</p>
 
 <h4>Exemplo:</h4>
 <div class="tr-example">
