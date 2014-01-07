@@ -114,3 +114,14 @@ end
 desc "Commit and deploy _site/"
 task :commit_deploy => [:commit, :deploy] do
 end
+
+desc "Deploy site through SFTP"
+task :publicar do
+  require 'dotenv'
+  Dotenv.load
+  require 'net/sftp'
+  Net::SFTP.start("#{ENV['SFTP_HOST']}:#{ENV['SFTP_PORT']}", "#{ENV['SFTP_USERNAME']}", :password => "#{ENV['SFTP_PASSWORD']}") do |sftp|
+    sftp.mkdir!("#{ENV['SFTP_DESTINATION_PATH']}")
+    sftp.upload!("#{ENV['SFT_LOCAL_PATH']}", "#{ENV['SFTP_DESTINATION_PATH']}")
+  end
+end
