@@ -114,3 +114,13 @@ end
 desc "Commit and deploy _site/"
 task :commit_deploy => [:commit, :deploy] do
 end
+
+desc "Deploy site through SFTP"
+task :publicar do
+  require "#{File.dirname(__FILE__)}/_lib/sftp"
+  SFTP.deploy
+end
+
+desc "Commit and deploy _site/"
+task :complete_deploy => [:commit, :deploy, :publicar] do
+end
